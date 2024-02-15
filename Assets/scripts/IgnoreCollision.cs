@@ -9,7 +9,6 @@ public class IgnoreCollision : MonoBehaviour
     {
         if(this.tag != "dead")
         {
-            Debug.Log("collision ignored");
             var colliders = GetComponentsInChildren<Collider2D>();
             for (int i = 0; i < colliders.Length; i++)
             {

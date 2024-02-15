@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     public GameObject leftlowerarm;
     Rigidbody2D leftLegRB;
     Rigidbody2D rightLegRB;
-    public bool jumpable;
+    public bool jumpable = false;
     private ParticleSystem ps;
     public GameObject newplayer;
     public Transform SpawnPoint;
@@ -65,13 +65,14 @@ public class Movement : MonoBehaviour
             {
                 anim.Play("idle");
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+            if(jumpable)
             {
-                if(jumpable)
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     jumpable = false;
                     leftLegRB.AddForce(Vector2.up * (jumpHeight*1000));
                     rightLegRB.AddForce(Vector2.up * (jumpHeight * 1000));
+
                 }
             }
         }
