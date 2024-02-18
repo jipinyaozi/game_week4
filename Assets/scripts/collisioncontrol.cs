@@ -16,7 +16,7 @@ public class collisioncontrol : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D col)
     {
-        Debug.Log("triggered");
+        //Debug.Log("triggered");
         if(this.tag != "dead"){
             if(col.gameObject.CompareTag("Spike"))
             {

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    
+
+
     public GameObject leftLeg;
     public GameObject rightLeg;
     public GameObject leftlowerleg;
@@ -22,9 +23,11 @@ public class Movement : MonoBehaviour
     public GameObject newplayer;
     public Transform SpawnPoint;
     public IgnoreCollision IC;
+    private GameObject heldBody = null;
+    private bool isHoldingBody = false;
+    private SpriteRenderer playerSpriteRenderer;
 
 
-    
     Animator anim;
     [SerializeField] float speed = 2f;
     [SerializeField] float jumpHeight = 2f;
@@ -36,8 +39,8 @@ public class Movement : MonoBehaviour
         rightLegRB = rightLeg.GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         ps = FindObjectOfType<ParticleSystem>();
+        playerSpriteRenderer = GetComponent<SpriteRenderer>();
 
-        
     }
 
     // Update is called once per frame
@@ -69,12 +72,53 @@ public class Movement : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
+                    Debug.Log("Space key is pressed.");
                     jumpable = false;
                     leftLegRB.AddForce(Vector2.up * (jumpHeight*1000));
                     rightLegRB.AddForce(Vector2.up * (jumpHeight * 1000));
 
                 }
             }
+            // Check if E key is pressed
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("E key pressed"); // Debug message for key press
+
+                // Check for dead bodies in a certain radius
+                Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 5f); // Adjust the radius as needed
+                bool deadBodyDetected = false;
+
+                foreach (var hit in hits)
+                {
+                    // Check if we hit a dead body
+                    if (hit.CompareTag("dead"))
+                    {
+                        Debug.Log("Dead body detected!"); // Debug message for detection
+                        PickUpBody(hit.gameObject);
+                        deadBodyDetected = true;
+  
+                        break;
+                    }
+                }
+
+                if (!deadBodyDetected)
+                {
+                    Debug.Log("No dead body detected"); // Debug message if nothing is detected
+
+                }
+
+
+            }
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Debug.Log("F key pressed");
+                if (isHoldingBody)
+                {
+                    Debug.Log("ready to throw");
+                    ThrowBody();
+                }
+            }
+
         }
        
     }
@@ -98,6 +142,10 @@ public class Movement : MonoBehaviour
     {
         if(this.tag != "dead")
         {
+            if (heldBody)
+            {
+                ThrowBody();
+            }
             IC.enabled = false;
             Instantiate(newplayer, new Vector3(-8, 0, 0), Quaternion.identity);
             leftLeg.GetComponent<Balance>().force = 0;
@@ -123,5 +171,38 @@ public class Movement : MonoBehaviour
         rightLegRB.AddForce(Vector2.left * (speed * 1000) * Time.deltaTime);
         yield return new WaitForSeconds(seconds);
         leftLegRB.AddForce(Vector2.left * (speed * 1000) * Time.deltaTime);
+    }
+    void PickUpBody(GameObject deadBody)
+    {
+        heldBody = deadBody;
+        isHoldingBody = true;
+        // Make the dead body a child of the player to carry it
+        heldBody.transform.SetParent(this.transform);
+        // Optionally, disable the Rigidbody2D to prevent physics forces from affecting it while being carried
+        Rigidbody2D rb = heldBody.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.isKinematic = true;
+            rb.velocity = Vector2.zero; // Stop any movement
+        }
+    }
+
+    void ThrowBody()
+    {
+        if (heldBody != null)
+        {
+            // Re-enable the Rigidbody2D and make it non-kinematic
+            Rigidbody2D rb = heldBody.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.isKinematic = false;
+                // Apply a force to throw the body
+                rb.AddForce(transform.up * 5f + transform.forward * 10f, ForceMode2D.Impulse); // Adjust the force as needed
+            }
+            // Unparent the dead body (so it doesn't follow the player anymore)
+            heldBody.transform.SetParent(null);
+            heldBody = null;
+            isHoldingBody = false;
+        }
     }
 }

@@ -16,6 +16,7 @@ public class playermovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         ps = FindObjectOfType<ParticleSystem>();
+
     }
 
     // Update is called once per frame
@@ -32,7 +33,11 @@ public class playermovement : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, 4f);
                 }
             }
+
+           
+
         }
+        
     }
 
     private void OnCollisionStay2D(Collision2D col)
@@ -52,5 +57,5 @@ public class playermovement : MonoBehaviour
         dead = true;
         ps.Play();
     }
-
+    
 }

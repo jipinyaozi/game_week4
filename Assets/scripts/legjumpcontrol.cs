@@ -17,7 +17,7 @@ public class legjumpcontrol : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D col)
     {
-        Debug.Log("triggered");
+        //Debug.Log("triggered");
         playercontrol.jumpable = true;
         if(this.tag != "dead"){
             if(col.gameObject.CompareTag("Spike"))
