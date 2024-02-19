@@ -72,7 +72,6 @@ public class Movement : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    Debug.Log("Space key is pressed.");
                     jumpable = false;
                     leftLegRB.AddForce(Vector2.up * (jumpHeight*1000));
                     rightLegRB.AddForce(Vector2.up * (jumpHeight * 1000));
@@ -131,7 +130,7 @@ public class Movement : MonoBehaviour
         rightLeg.tag = "dead";
         rightlowerleg.tag = "dead";
         head.tag = "dead";
-        body.tag = "dead";
+        body.tag = "Door";
         leftlowerarm.tag = "dead";
         leftupperarm.tag = "dead";
         rightlowerarm.tag = "dead";
