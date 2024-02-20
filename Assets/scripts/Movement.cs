@@ -32,6 +32,9 @@ public class Movement : MonoBehaviour
     [SerializeField] float speed = 2f;
     [SerializeField] float jumpHeight = 2f;
     [SerializeField] float legWait = .5f;
+    [SerializeField] private float throwStrength = 10f; // Adjust according to your game's needs.
+    [SerializeField] private float upwardThrowStrength = 5f; // Adjust for the vertical component of the throw.
+
     // Start is called before the first frame update
     void Start()
     {
@@ -173,43 +176,50 @@ public class Movement : MonoBehaviour
     }
     void PickUpBody(GameObject deadBody)
     {
-    heldBody = deadBody;
-    isHoldingBody = true;
-    // Make the dead body a child of the player to carry it
-    heldBody.transform.SetParent(this.transform);
-        
+        heldBody = deadBody;
+        isHoldingBody = true;
+        heldBody.transform.SetParent(this.transform);
 
-    // Set an offset for the dead body position relative to the player
-    // Adjust the values to position the dead body where you want it relative to the player
-    float yOffset = -1.0f; // Half the character's height or whatever looks good
-    heldBody.transform.localPosition = new Vector3(2.0f, yOffset, 2.0f);
+        // Determine if the body is on the player's left or right by comparing their positions
+        float xOffset = Mathf.Abs(1.5f); // Absolute value for the horizontal offset
+        float yOffset = -1.5f; // Vertical offset, adjust as needed
+        if (heldBody.transform.position.x < transform.position.x)
+        {
+            // Body is to the player's left
+            xOffset = -xOffset;
+        }
 
-    // Optionally, disable the Rigidbody2D to prevent physics forces from affecting it while being carried
-    Rigidbody2D rb = heldBody.GetComponent<Rigidbody2D>();
-    if (rb != null)
-    {
-        rb.isKinematic = true;
-        rb.velocity = Vector2.zero; // Stop any movement
+        heldBody.transform.localPosition = new Vector2(xOffset, yOffset);
+
+        Rigidbody2D rb = heldBody.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.isKinematic = true;
+            rb.velocity = Vector2.zero;
+        }
     }
 
-    }
+
 
     void ThrowBody()
     {
         if (heldBody != null)
         {
-            // Re-enable the Rigidbody2D and make it non-kinematic
             Rigidbody2D rb = heldBody.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
                 rb.isKinematic = false;
-                // Apply a force to throw the body
-                rb.AddForce(transform.up * 10f + transform.right * 10f, ForceMode2D.Impulse); // Adjust the force as needed
+
+                // Use the local position since the body's global position is affected by being a child
+                Vector2 throwDirection = heldBody.transform.localPosition.x < 0 ? Vector2.left : Vector2.right;
+                rb.AddForce(throwDirection * throwStrength + Vector2.up * upwardThrowStrength, ForceMode2D.Impulse);
             }
-            // Unparent the dead body (so it doesn't follow the player anymore)
+
             heldBody.transform.SetParent(null);
             heldBody = null;
             isHoldingBody = false;
         }
     }
+
+
 }
