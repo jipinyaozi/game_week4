@@ -29,6 +29,8 @@ public class Movement : MonoBehaviour
     private SpriteRenderer deadRenderer;
     private Color deadColor;
 
+    private int deathCount = 0;
+
     Animator anim;
     [SerializeField] float speed = 2f;
     [SerializeField] float jumpHeight = 2f;
@@ -168,6 +170,7 @@ public class Movement : MonoBehaviour
             rightlowerarm.GetComponent<SpriteRenderer>().color = deadColor;
             leftupperarm.GetComponent<SpriteRenderer>().color = deadColor;
             leftlowerarm.GetComponent<SpriteRenderer>().color = deadColor;
+            deathCount++;
             ps.Play();
             changetag();
         }
