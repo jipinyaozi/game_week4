@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
-
     public GameObject leftLeg;
     public GameObject rightLeg;
     public GameObject leftlowerleg;
