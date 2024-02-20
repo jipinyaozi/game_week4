@@ -132,16 +132,16 @@ public class Movement : MonoBehaviour
     public void changetag()
     {
         this.tag = "dead";
-        leftLeg.tag = "dead";
-        leftlowerleg.tag = "dead";
-        rightLeg.tag = "dead";
-        rightlowerleg.tag = "dead";
-        head.tag = "dead";
-        body.tag = "Door";
-        leftlowerarm.tag = "dead";
-        leftupperarm.tag = "dead";
-        rightlowerarm.tag = "dead";
-        rightuperarm.tag = "dead";
+        leftLeg.tag = "Door";
+        leftlowerleg.tag = "Door";
+        rightLeg.tag = "Door";
+        rightlowerleg.tag = "Door";
+        head.tag = "Door";
+        body.tag = "dead";
+        leftlowerarm.tag = "Door";
+        leftupperarm.tag = "Door";
+        rightlowerarm.tag = "Door";
+        rightuperarm.tag = "Door";
     }
 
     public void kill()

@@ -22,6 +22,7 @@ public class jumppad : MonoBehaviour
 
         }
     }
+    
     IEnumerator wait()
     {
         yield return new WaitForSeconds(3);
