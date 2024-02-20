@@ -302,9 +302,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1047498373160934427, guid: 8423a921b56dfd44785f15d83cf03354, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047498373160934427, guid: 8423a921b56dfd44785f15d83cf03354, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 7471930710612472107, guid: 8423a921b56dfd44785f15d83cf03354, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.2
+      value: -18.43
       objectReference: {fileID: 0}
     - target: {fileID: 7471930710612472107, guid: 8423a921b56dfd44785f15d83cf03354, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1169,7 +1177,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a318877964cd25347b60a906a4eec5b5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2084,6 +2092,10 @@ PrefabInstance:
       propertyPath: bounceForce
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 3002193404020421073, guid: 888eda588a675214fa1787ce21f911b3, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4042715081586645267, guid: 888eda588a675214fa1787ce21f911b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.6800003
@@ -2676,6 +2688,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1047498373160934427, guid: 8423a921b56dfd44785f15d83cf03354, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047498373160934427, guid: 8423a921b56dfd44785f15d83cf03354, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 7471930710612472107, guid: 8423a921b56dfd44785f15d83cf03354, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.1
@@ -3314,6 +3334,10 @@ PrefabInstance:
     - target: {fileID: 2142090856459935399, guid: 888eda588a675214fa1787ce21f911b3, type: 3}
       propertyPath: bounceForce
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002193404020421073, guid: 888eda588a675214fa1787ce21f911b3, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4042715081586645267, guid: 888eda588a675214fa1787ce21f911b3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4717,6 +4741,10 @@ PrefabInstance:
     - target: {fileID: 2142090856459935399, guid: 888eda588a675214fa1787ce21f911b3, type: 3}
       propertyPath: bounceForce
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002193404020421073, guid: 888eda588a675214fa1787ce21f911b3, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4042715081586645267, guid: 888eda588a675214fa1787ce21f911b3, type: 3}
       propertyPath: m_LocalPosition.x
