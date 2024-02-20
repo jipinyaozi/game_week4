@@ -27,6 +27,9 @@ public class Movement : MonoBehaviour
     private bool isHoldingBody = false;
     private SpriteRenderer playerSpriteRenderer;
 
+    public GameObject dead;
+    private SpriteRenderer deadRenderer;
+    private Color deadColor;
 
     Animator anim;
     [SerializeField] float speed = 2f;
@@ -43,7 +46,8 @@ public class Movement : MonoBehaviour
         anim = GetComponent<Animator>();
         ps = FindObjectOfType<ParticleSystem>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
-
+        deadRenderer = dead.GetComponent<SpriteRenderer>();
+        deadColor = deadRenderer.color;
     }
 
     // Update is called once per frame
@@ -156,6 +160,16 @@ public class Movement : MonoBehaviour
             rightlowerleg.GetComponent<Balance>().force = 0;
             body.GetComponent<Balance>().force = 0;
             head.GetComponent<Balance>().force = 0;
+            head.GetComponent<SpriteRenderer>().color = deadColor;
+            body.GetComponent<SpriteRenderer>().color = deadColor;
+            leftLeg.GetComponent<SpriteRenderer>().color = deadColor;
+            rightLeg.GetComponent<SpriteRenderer>().color = deadColor;
+            leftlowerleg.GetComponent<SpriteRenderer>().color = deadColor;
+            rightlowerleg.GetComponent<SpriteRenderer>().color = deadColor;
+            rightuperarm.GetComponent<SpriteRenderer>().color = deadColor;
+            rightlowerarm.GetComponent<SpriteRenderer>().color = deadColor;
+            leftupperarm.GetComponent<SpriteRenderer>().color = deadColor;
+            leftlowerarm.GetComponent<SpriteRenderer>().color = deadColor;
             ps.Play();
             changetag();
         }

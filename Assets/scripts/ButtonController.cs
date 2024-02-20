@@ -24,9 +24,7 @@ public class ButtonController : MonoBehaviour
         // Check if the collided object is the one that should trigger the button
         if (collision.gameObject.CompareTag("Door")) // Change "Player" to the tag of the object you want to trigger the button
         {
-            StartCoroutine(FadeOutDoor());
             isPressed = true;
-            door.SetActive(false);
         }
     }
 
@@ -36,19 +34,19 @@ public class ButtonController : MonoBehaviour
         if (collision.gameObject.CompareTag("Door")) // Change "Player" to the tag of the object you want to trigger the button
         {
             isPressed = false;
-            // Reset the door's transparency
-            doorRenderer.color = originalColor;
-            door.SetActive(true);
         }
     }
 
-    void OnCollisionStay2D(Collision2D collision)
+    void Update()
     {
         // Fade out the door while the player is on the button
         if (isPressed)
         {
             StartCoroutine(FadeOutDoor());
             door.SetActive(false);
+        } else if (isPressed == false) {
+            doorRenderer.color = originalColor;
+            door.SetActive(true);
         }
     }
 

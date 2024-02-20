@@ -526,7 +526,7 @@ Transform:
   m_GameObject: {fileID: 543257122}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0291, y: 5.23, z: 0}
+  m_LocalPosition: {x: 3.0291, y: 0.31, z: 0}
   m_LocalScale: {x: 0.4383, y: 7.9633007, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 572901331}
   - component: {fileID: 572901330}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Jumppad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be686e912cb8bf4a96938ff89efa26e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounce: 50
+  bounce: 60
 --- !u!61 &572901331
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1547,7 +1547,7 @@ GameObject:
   - component: {fileID: 1364163863}
   - component: {fileID: 1364163865}
   m_Layer: 0
-  m_Name: w
+  m_Name: Platform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1613,12 +1613,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364163862}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.9749, y: -1.8138, z: 0}
-  m_LocalScale: {x: 7.3718557, y: 3.8076444, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.023906661, y: 0.81781757, z: 0}
+  m_LocalScale: {x: 0.12286427, y: 0.6587739, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1551811720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1364163865
 BoxCollider2D:
@@ -1928,6 +1928,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2110707933}
+  - {fileID: 1364163864}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1585959131 stripped
@@ -2684,4 +2685,3 @@ SceneRoots:
   - {fileID: 1682422264}
   - {fileID: 543257125}
   - {fileID: 572901333}
-  - {fileID: 1364163864}
