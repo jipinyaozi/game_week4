@@ -79,7 +79,7 @@ public class Movement : MonoBehaviour
                 }
             }
             // Check if E key is pressed
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E)&&!heldBody)
             {
                 Debug.Log("E key pressed"); // Debug message for key press
 
@@ -183,7 +183,7 @@ public class Movement : MonoBehaviour
     // Adjust the values to position the dead body where you want it relative to the player
     float yOffset = -1.0f; // Half the character's height or whatever looks good
     heldBody.transform.localPosition = new Vector3(2.0f, yOffset, 2.0f);
-        
+
     // Optionally, disable the Rigidbody2D to prevent physics forces from affecting it while being carried
     Rigidbody2D rb = heldBody.GetComponent<Rigidbody2D>();
     if (rb != null)
@@ -191,28 +191,25 @@ public class Movement : MonoBehaviour
         rb.isKinematic = true;
         rb.velocity = Vector2.zero; // Stop any movement
     }
+
     }
 
     void ThrowBody()
     {
         if (heldBody != null)
         {
+            // Re-enable the Rigidbody2D and make it non-kinematic
             Rigidbody2D rb = heldBody.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.isKinematic = false; // Make sure physics applies again
-
-                // Apply a force to simulate throwing
-                rb.AddForce(transform.up * 10f + transform.right * 10f, ForceMode2D.Impulse); // Adjust direction/force as needed
+                rb.isKinematic = false;
+                // Apply a force to throw the body
+                rb.AddForce(transform.up * 10f + transform.right * 10f, ForceMode2D.Impulse); // Adjust the force as needed
             }
-
-            // Unparent the dead body
+            // Unparent the dead body (so it doesn't follow the player anymore)
             heldBody.transform.SetParent(null);
-
-            // Reset these so the player can pick up again later
             heldBody = null;
             isHoldingBody = false;
         }
     }
-
 }
