@@ -28,6 +28,7 @@ public class Movement : MonoBehaviour
     public GameObject dead;
     private SpriteRenderer deadRenderer;
     private Color deadColor;
+    public AudioSource audio;
 
     private int deathCount = 0;
 
@@ -152,7 +153,10 @@ public class Movement : MonoBehaviour
             {
                 ThrowBody();
             }
+            audio.Play();
+            anim.Play("death");
             IC.enabled = false;
+            StartCoroutine(wait());
             Instantiate(newplayer, SpawnPoint.position, Quaternion.identity);
             leftLeg.GetComponent<Balance>().force = 0;
             rightLeg.GetComponent<Balance>().force = 0;
@@ -174,6 +178,12 @@ public class Movement : MonoBehaviour
             ps.Play();
             changetag();
         }
+    }
+
+    IEnumerator wait()
+    {
+        Debug.Log("waited");
+        yield return new WaitForSeconds(4);
     }
 
     IEnumerator MoveRight(float seconds)

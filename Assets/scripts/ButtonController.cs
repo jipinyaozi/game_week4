@@ -19,22 +19,14 @@ public class ButtonController : MonoBehaviour
         originalColor = doorRenderer.color;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
-        // Check if the collided object is the one that should trigger the button
-        if (collision.gameObject.CompareTag("Door")) // Change "Player" to the tag of the object you want to trigger the button
-        {
-            isPressed = true;
-        }
+        isPressed = true;
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        // Reset the button when the object leaves
-        if (collision.gameObject.CompareTag("Door")) // Change "Player" to the tag of the object you want to trigger the button
-        {
-            isPressed = false;
-        }
+        isPressed = false;
     }
 
     void Update()
