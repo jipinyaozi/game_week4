@@ -149,7 +149,7 @@ public class Movement : MonoBehaviour
                 ThrowBody();
             }
             IC.enabled = false;
-            Instantiate(newplayer, new Vector3(-8, 0, 0), Quaternion.identity);
+            Instantiate(newplayer, SpawnPoint.position, Quaternion.identity);
             leftLeg.GetComponent<Balance>().force = 0;
             rightLeg.GetComponent<Balance>().force = 0;
             leftlowerleg.GetComponent<Balance>().force = 0;
@@ -176,9 +176,12 @@ public class Movement : MonoBehaviour
     }
     void PickUpBody(GameObject deadBody)
     {
+        IgnoreCollision ignorecol;
         heldBody = deadBody;
         isHoldingBody = true;
         heldBody.transform.SetParent(this.transform);
+        ignorecol = heldBody.transform.parent.GetComponent<IgnoreCollision>();
+        ignorecol.enabled = true;
 
         // Determine if the body is on the player's left or right by comparing their positions
         float xOffset = Mathf.Abs(1.5f); // Absolute value for the horizontal offset

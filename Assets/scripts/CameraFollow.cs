@@ -36,9 +36,14 @@ public class CameraFollow : MonoBehaviour
         {
             Vector3 desiredPosition = player.position + offset;
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+            StartCoroutine(wait());
             transform.position = smoothedPosition;
             // Update the position of the empty GameObject to follow the player
             transform.position = player.position;
         }
+    }
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(3);
     }
 }
