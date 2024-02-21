@@ -1923,7 +1923,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.704114, y: 0, z: 15.507921, w: 3.043796}
+  m_margin: {x: -0.8710432, y: 0, z: 15.507921, w: 4.1988297}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -1990,7 +1990,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.2, y: -17.5}
+  m_AnchoredPosition: {x: 6.5, y: -14.89}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &671071229
@@ -2522,7 +2522,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.22929, y: 0, z: 15.507921, w: 1.4093299}
+  m_margin: {x: -2.7281218, y: 0, z: 15.507921, w: 3.5635247}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -2589,7 +2589,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.46, y: -14.03}
+  m_AnchoredPosition: {x: 7.46, y: -13.46}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &834533418
@@ -3505,7 +3505,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: a318877964cd25347b60a906a4eec5b5, type: 3}
     - target: {fileID: 80679999174338019, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683192325446169656, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4796486321077047733, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: dead
@@ -3539,9 +3543,13 @@ PrefabInstance:
       propertyPath: m_AngleLimits.m_UpperAngle
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 7040794676191768015, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7471930710612472107, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.27
+      value: -30.26
       objectReference: {fileID: 0}
     - target: {fileID: 7471930710612472107, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_LocalPosition.y
