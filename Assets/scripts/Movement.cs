@@ -31,6 +31,7 @@ public class Movement : MonoBehaviour
     public AudioSource audio;
 
     private int deathCount = 0;
+    private DeathCounter deathCounter;
 
     Animator anim;
     [SerializeField] float speed = 2f;
@@ -49,6 +50,7 @@ public class Movement : MonoBehaviour
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
         deadRenderer = dead.GetComponent<SpriteRenderer>();
         deadColor = deadRenderer.color;
+        deathCounter = GameObject.Find("DeathCounter").GetComponent<DeathCounter>();
     }
 
     // Update is called once per frame
@@ -175,6 +177,7 @@ public class Movement : MonoBehaviour
             leftupperarm.GetComponent<SpriteRenderer>().color = deadColor;
             leftlowerarm.GetComponent<SpriteRenderer>().color = deadColor;
             deathCount++;
+            deathCounter.PlayerDied();
             ps.Play();
             changetag();
         }
