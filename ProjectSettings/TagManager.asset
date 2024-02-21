@@ -9,6 +9,7 @@ TagManager:
   - dead
   - Door
   - jumppad
+  - ball
   layers:
   - Default
   - TransparentFX
