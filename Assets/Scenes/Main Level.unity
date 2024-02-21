@@ -830,7 +830,7 @@ PrefabInstance:
     - target: {fileID: 4796486321077047733, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: SpawnPoint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1440937354}
     - target: {fileID: 4796486321077047733, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: jumpHeight
       value: 1.5
@@ -2266,6 +2266,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 888eda588a675214fa1787ce21f911b3, type: 3}
+--- !u!4 &1440937354 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1457372596797946002, guid: 35f4ef6bd965b18458c172e8184a3b69, type: 3}
+  m_PrefabInstance: {fileID: 214617311}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1451923192
 PrefabInstance:
   m_ObjectHideFlags: 0
