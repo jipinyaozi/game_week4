@@ -788,6 +788,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9429532937cba64489ba532fff3043d5, type: 3}
+--- !u!1 &386401144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3426468540256844939, guid: 9429532937cba64489ba532fff3043d5, type: 3}
+  m_PrefabInstance: {fileID: 386401143}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &543024879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,7 +1999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -355, y: -226}
+  m_AnchoredPosition: {x: -200, y: -140}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1381803707
@@ -2881,7 +2886,7 @@ PrefabInstance:
     - target: {fileID: 5353757633290534373, guid: ed4c81076187e9d46a7052bcdac0eabc, type: 3}
       propertyPath: door
       value: 
-      objectReference: {fileID: 958555624}
+      objectReference: {fileID: 386401144}
     - target: {fileID: 8534847472659371233, guid: ed4c81076187e9d46a7052bcdac0eabc, type: 3}
       propertyPath: m_Name
       value: Button
