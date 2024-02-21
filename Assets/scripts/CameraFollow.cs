@@ -6,7 +6,9 @@ public class CameraFollow : MonoBehaviour
 {
     public string playerTag = "Player"; // Tag of the player GameObject
 
-    private Transform player; // Reference to the player GameObject
+
+    public GameObject player; // Reference to the player GameObject
+    public Transform playerpos;
 
     public float smoothSpeed = 0.125f; // How quickly the camera follows the player
     public Vector3 offset;
@@ -14,39 +16,39 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         // Find the player GameObject using the tag
-        player = GameObject.FindGameObjectWithTag(playerTag)?.transform;
+        player = GameObject.FindGameObjectWithTag(playerTag);
+        playerpos = GameObject.FindGameObjectWithTag(playerTag)?.transform;
 
-        if (player.name == "Body")
+        if (playerpos.name == "Head")
         {
-            player = player.transform;
+            playerpos = playerpos.transform;
         }
     }
 
     void FixedUpdate()
     {
-        player = GameObject.FindGameObjectWithTag(playerTag)?.transform;
+        player = GameObject.FindGameObjectWithTag(playerTag);
+        playerpos = GameObject.FindGameObjectWithTag(playerTag)?.transform;
 
-        if (player.name == "Body")
-        {
-            player = player.transform;
-        }
-        if(player.name != "Body")
+
+        if(player == null)
         {
             StartCoroutine(wait());
         }
- 
-
-        if (player != null)
-        {
-            StartCoroutine(wait());
+        else{
+                Vector3 desiredPosition = playerpos.position + offset;
+                Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+                transform.position = smoothedPosition;
+                transform.position = playerpos.position;
         }
+
+
+
     }
     IEnumerator wait()
     {
         yield return new WaitForSeconds(2);
-        Vector3 desiredPosition = player.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        transform.position = smoothedPosition;
-        transform.position = player.position;
     }
 }
+
+

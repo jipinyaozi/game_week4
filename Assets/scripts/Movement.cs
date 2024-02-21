@@ -29,7 +29,8 @@ public class Movement : MonoBehaviour
     private SpriteRenderer deadRenderer;
     private Color deadColor;
     public AudioSource audio;
-
+    public bool isDead = false;
+    GameObject clone;
     private int deathCount = 0;
     private DeathCounter deathCounter;
 
@@ -135,58 +136,52 @@ public class Movement : MonoBehaviour
     public void changetag()
     {
         this.tag = "dead";
-        leftLeg.tag = "Door";
-        leftlowerleg.tag = "Door";
-        rightLeg.tag = "Door";
-        rightlowerleg.tag = "Door";
-        head.tag = "Door";
+        leftLeg.tag = "dead";
+        leftlowerleg.tag = "dead";
+        rightLeg.tag = "dead";
+        rightlowerleg.tag = "dead";
+        head.tag = "dead";
         body.tag = "dead";
-        leftlowerarm.tag = "Door";
-        leftupperarm.tag = "Door";
-        rightlowerarm.tag = "Door";
-        rightuperarm.tag = "Door";
+        leftlowerarm.tag = "dead";
+        leftupperarm.tag = "dead";
+        rightlowerarm.tag = "dead";
+        rightuperarm.tag = "dead";
     }
 
     public void kill()
     {
         if(this.tag != "dead")
         {
+            this.tag = "dead";
             if (heldBody)
             {
                 ThrowBody();
             }
             audio.Play();
             anim.Play("death");
+            ps.Play();
+
             IC.enabled = false;
-            StartCoroutine(wait());
-            Instantiate(newplayer, SpawnPoint.position, Quaternion.identity);
-            leftLeg.GetComponent<Balance>().force = 0;
-            rightLeg.GetComponent<Balance>().force = 0;
-            leftlowerleg.GetComponent<Balance>().force = 0;
-            rightlowerleg.GetComponent<Balance>().force = 0;
-            body.GetComponent<Balance>().force = 0;
-            head.GetComponent<Balance>().force = 0;
-            head.GetComponent<SpriteRenderer>().color = deadColor;
-            body.GetComponent<SpriteRenderer>().color = deadColor;
-            leftLeg.GetComponent<SpriteRenderer>().color = deadColor;
-            rightLeg.GetComponent<SpriteRenderer>().color = deadColor;
-            leftlowerleg.GetComponent<SpriteRenderer>().color = deadColor;
-            rightlowerleg.GetComponent<SpriteRenderer>().color = deadColor;
-            rightuperarm.GetComponent<SpriteRenderer>().color = deadColor;
-            rightlowerarm.GetComponent<SpriteRenderer>().color = deadColor;
-            leftupperarm.GetComponent<SpriteRenderer>().color = deadColor;
-            leftlowerarm.GetComponent<SpriteRenderer>().color = deadColor;
+            // StartCoroutine(wait());
+            // Instantiate(newplayer, SpawnPoint.position, Quaternion.identity);
             deathCount++;
             deathCounter.PlayerDied();
-            ps.Play();
-            changetag();
+            // StartCoroutine(wait());
+            // changetag();
+            clone = Instantiate(newplayer, SpawnPoint.position, Quaternion.identity);
+            StartCoroutine(wait());
+
+            // Instantiate(newplayer, SpawnPoint.position, Quaternion.identity);
+            
         }
     }
 
     IEnumerator wait()
     {
-        Debug.Log("waited");
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
+        changetag();
+        clone.tag = "Player";
+
     }
 
     IEnumerator MoveRight(float seconds)
