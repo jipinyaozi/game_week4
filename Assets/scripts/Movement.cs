@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -33,6 +34,9 @@ public class Movement : MonoBehaviour
     GameObject clone;
     private int deathCount = 0;
     private DeathCounter deathCounter;
+
+    private int level1Deaths = 0;
+    private int level2Deaths = 0;
 
     Animator anim;
     [SerializeField] float speed = 2f;
@@ -225,8 +229,6 @@ public class Movement : MonoBehaviour
         }
     }
 
-
-
     void ThrowBody()
     {
         if (heldBody != null)
@@ -246,6 +248,4 @@ public class Movement : MonoBehaviour
             isHoldingBody = false;
         }
     }
-
-
 }
