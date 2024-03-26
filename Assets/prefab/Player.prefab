@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetRotation: 0
   rb: {fileID: 0}
-  force: 300
+  force: 100
 --- !u!114 &630940349901878775
 MonoBehaviour:
   m_ObjectHideFlags: 0
