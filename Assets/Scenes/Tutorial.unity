@@ -3832,9 +3832,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 630940349901878775, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680921007148856696, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3683192325446169656, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157300010182706968, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4506559886409619362, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: rb
@@ -3868,9 +3880,29 @@ PrefabInstance:
       propertyPath: jumpHeight
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5202650513617114829, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5256640403443842553, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5392027151327255619, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760231352371740560, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6401214613107102451, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: mousebutton
       value: 324
+      objectReference: {fileID: 0}
+    - target: {fileID: 6857031421211648104, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6886178575455164460, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_UseLimits
@@ -3928,9 +3960,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7669966350885628000, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7842525143222299962, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: mousebutton
       value: 323
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920272815248264303, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7973798175090475832, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_AngleLimits.m_LowerAngle
@@ -3947,6 +3987,14 @@ PrefabInstance:
     - target: {fileID: 8150117074501354410, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714157295400555586, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 2091745558}
+    - target: {fileID: 8957842653391219120, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9005396722216529386, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: rb

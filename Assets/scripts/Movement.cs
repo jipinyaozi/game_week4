@@ -153,6 +153,20 @@ public class Movement : MonoBehaviour
         rightlowerarm.tag = "dead";
         rightuperarm.tag = "dead";
     }
+    public void changelayer()
+    {
+        leftLeg.layer = LayerMask.NameToLayer("Default");
+        leftlowerleg.layer = LayerMask.NameToLayer("Default");
+        rightLeg.layer = LayerMask.NameToLayer("Default");
+        rightlowerleg.layer = LayerMask.NameToLayer("Default");
+        head.layer = LayerMask.NameToLayer("Default");
+        body.layer = LayerMask.NameToLayer("Default");
+        leftlowerarm.layer = LayerMask.NameToLayer("Default");
+        leftupperarm.layer = LayerMask.NameToLayer("Default");
+        rightlowerarm.layer = LayerMask.NameToLayer("Default");
+        rightuperarm.layer = LayerMask.NameToLayer("Default");
+
+    }
 
     public void kill()
     {
@@ -175,6 +189,7 @@ public class Movement : MonoBehaviour
             // StartCoroutine(wait());
             // changetag();
             clone = Instantiate(newplayer, SpawnPoint.position, Quaternion.identity);
+            changelayer();
 
             StartCoroutine(wait());
 
