@@ -93,6 +93,10 @@ public class Movement : MonoBehaviour
 
                 }
             }
+            if(Input.GetKeyDown(KeyCode.Z))
+            {
+                kill();
+            }
             // Check if E key is pressed
             // if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             // {
