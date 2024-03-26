@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7508da467240074a8c52964a922f2c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: Main Level
+  nextSceneName: Level 1
 --- !u!212 &53932804
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -732,7 +732,7 @@ Transform:
   m_GameObject: {fileID: 91844808}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.43, y: -8.616, z: 0.15761937}
+  m_LocalPosition: {x: 1.43, y: -8.587, z: 0.15761937}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1502,7 +1502,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a318877964cd25347b60a906a4eec5b5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1906,7 +1906,7 @@ Transform:
   m_GameObject: {fileID: 591139512}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4860325, y: -8.616, z: 0.15761937}
+  m_LocalPosition: {x: 0.4860325, y: -8.587, z: 0.15761937}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2185,7 +2185,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press F to Drop
+  m_text: Release to Let Go
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2248,7 +2248,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.8710432, y: 0, z: 15.507921, w: 4.1988297}
+  m_margin: {x: -1.1849756, y: 0, z: 15.507921, w: 4.1988297}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -2315,7 +2315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.5, y: -14.89}
+  m_AnchoredPosition: {x: 6.7, y: -14.89}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &671071229
@@ -2784,7 +2784,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Try using your bodies?
 
-    Press E to Pick Up'
+    Hold Left-click to Grab'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3371,7 +3371,7 @@ Transform:
   m_GameObject: {fileID: 1127651899}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4860325, y: -8.616, z: 0.15761937}
+  m_LocalPosition: {x: 0.4860325, y: -8.596, z: 0.15761937}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3505,7 +3505,7 @@ Transform:
   m_GameObject: {fileID: 1129182388}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.43, y: -8.616, z: 0.15761937}
+  m_LocalPosition: {x: 1.43, y: -8.596, z: 0.15761937}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3919,6 +3919,10 @@ PrefabInstance:
     - target: {fileID: 7040794676191768015, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247659328097695901, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: force
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7471930710612472107, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_LocalPosition.x
