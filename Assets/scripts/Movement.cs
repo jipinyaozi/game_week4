@@ -94,44 +94,46 @@ public class Movement : MonoBehaviour
                 }
             }
             // Check if E key is pressed
-            if (Input.GetKeyDown(KeyCode.E)&&!heldBody)
-            {
-                Debug.Log("E key pressed"); // Debug message for key press
+            // if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            // {
+            //     Debug.Log("E key pressed"); // Debug message for key press
 
-                // Check for dead bodies in a certain radius
-                Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 5f); // Adjust the radius as needed
-                bool deadBodyDetected = false;
+            //     // Check for dead bodies in a certain radius
+            //     Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 5f); // Adjust the radius as needed
+            //     bool deadBodyDetected = false;
 
-                foreach (var hit in hits)
-                {
-                    // Check if we hit a dead body
-                    if (hit.CompareTag("dead"))
-                    {
-                        Debug.Log("Dead body detected!"); // Debug message for detection
-                        PickUpBody(hit.gameObject);
-                        deadBodyDetected = true;
-  
-                        break;
-                    }
-                }
+            //     if(!isHoldingBody)
+            //     {
+            //         foreach (var hit in hits)
+            //         {
+            //             // Check if we hit a dead body
+            //             if (hit.CompareTag("dead"))
+            //             {
+            //                 Debug.Log("Dead body detected!"); // Debug message for detection
+            //                 PickUpBody(hit.gameObject);
+            //                 deadBodyDetected = true;
+    
+            //                 break;
+            //             }
+            //         }
+            //     }
 
-                if (!deadBodyDetected)
-                {
-                    Debug.Log("No dead body detected"); // Debug message if nothing is detected
+            //     if (!deadBodyDetected)
+            //     {
+            //         Debug.Log("No dead body detected"); // Debug message if nothing is detected
 
-                }
+            //     }
 
-
-            }
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                Debug.Log("F key pressed");
-                if (isHoldingBody)
-                {
-                    Debug.Log("ready to throw");
-                    ThrowBody();
-                }
-            }
+            // }
+            // if (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1))
+            // {
+            //     Debug.Log("F key pressed");
+            //     if (isHoldingBody)
+            //     {
+            //         Debug.Log("ready to throw");
+            //         ThrowBody();
+            //     }
+            // }
 
         }
        
@@ -173,6 +175,7 @@ public class Movement : MonoBehaviour
             // StartCoroutine(wait());
             // changetag();
             clone = Instantiate(newplayer, SpawnPoint.position, Quaternion.identity);
+
             StartCoroutine(wait());
 
             // Instantiate(newplayer, SpawnPoint.position, Quaternion.identity);

@@ -216,6 +216,8 @@ GameObject:
   - component: {fileID: 6886178575455164460}
   - component: {fileID: 8957842653391219120}
   - component: {fileID: 7792612687024911831}
+  - component: {fileID: 6401214613107102451}
+  - component: {fileID: 8714157295400555586}
   m_Layer: 0
   m_Name: left_lower_arm
   m_TagString: Untagged
@@ -412,6 +414,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8150117074501354410}
+--- !u!114 &6401214613107102451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237657170076505945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a98e09ad8fe93546aeada352c2817e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mousebutton: 324
+--- !u!114 &8714157295400555586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237657170076505945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7995fbded3dac4198681475258a5e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4233269533248266754}
+  cam: {fileID: 0}
+  mousebutton: 324
 --- !u!1 &898214526234571219
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +457,7 @@ GameObject:
   - component: {fileID: 7973798175090475832}
   - component: {fileID: 7920272815248264303}
   - component: {fileID: 6318505210532023259}
+  - component: {fileID: 4506559886409619362}
   m_Layer: 0
   m_Name: right_upper_arm
   m_TagString: Untagged
@@ -594,10 +625,10 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 1
+  m_UseLimits: 0
   m_AngleLimits:
     m_LowerAngle: 0
-    m_UpperAngle: 203.28499
+    m_UpperAngle: 360
 --- !u!114 &7920272815248264303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,6 +654,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8150117074501354410}
+--- !u!114 &4506559886409619362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898214526234571219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7995fbded3dac4198681475258a5e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 9176531458796499486}
+  cam: {fileID: 0}
+  mousebutton: 323
 --- !u!1 &1476297563388801075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1128,7 @@ GameObject:
   - component: {fileID: 7338456582156329681}
   - component: {fileID: 4157300010182706968}
   - component: {fileID: 5461079316124888155}
+  - component: {fileID: 9005396722216529386}
   m_Layer: 0
   m_Name: left_upper_arm
   m_TagString: Untagged
@@ -1249,7 +1296,7 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 1
+  m_UseLimits: 0
   m_AngleLimits:
     m_LowerAngle: -176.43594
     m_UpperAngle: -7.9754333
@@ -1278,6 +1325,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8150117074501354410}
+--- !u!114 &9005396722216529386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2833377599289323611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7995fbded3dac4198681475258a5e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5458586034255933060}
+  cam: {fileID: 0}
+  mousebutton: 324
 --- !u!1 &5447506637625364819
 GameObject:
   m_ObjectHideFlags: 0
@@ -6889,6 +6951,8 @@ GameObject:
   - component: {fileID: 6827184259716847127}
   - component: {fileID: 5392027151327255619}
   - component: {fileID: 2076216018244084899}
+  - component: {fileID: 7842525143222299962}
+  - component: {fileID: 7305104564709728477}
   m_Layer: 0
   m_Name: right_lower_arm
   m_TagString: Untagged
@@ -7085,6 +7149,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8150117074501354410}
+--- !u!114 &7842525143222299962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074782582204978814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a98e09ad8fe93546aeada352c2817e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mousebutton: 323
+--- !u!114 &7305104564709728477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074782582204978814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7995fbded3dac4198681475258a5e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4585487434917401685}
+  cam: {fileID: 0}
+  mousebutton: 323
 --- !u!1 &8150117074501354410
 GameObject:
   m_ObjectHideFlags: 0
@@ -7183,6 +7275,7 @@ MonoBehaviour:
   IC: {fileID: 7669966350885628000}
   dead: {fileID: 8150117074501354410, guid: 8423a921b56dfd44785f15d83cf03354, type: 3}
   audio: {fileID: -784305380239154125}
+  isDead: 0
   speed: 1
   jumpHeight: 1.5
   legWait: 0.5
