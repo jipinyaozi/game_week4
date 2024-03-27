@@ -25,6 +25,7 @@ public class Movement : MonoBehaviour
     private GameObject heldBody = null;
     private bool isHoldingBody = false;
     private SpriteRenderer playerSpriteRenderer;
+    Balance bodybalance;
 
     public GameObject dead;
     private SpriteRenderer deadRenderer;
@@ -56,6 +57,7 @@ public class Movement : MonoBehaviour
         deadRenderer = dead.GetComponent<SpriteRenderer>();
         deadColor = deadRenderer.color;
         deathCounter = GameObject.Find("DeathCounter").GetComponent<DeathCounter>();
+        bodybalance = body.GetComponent<Balance>();
     }
 
     // Update is called once per frame
@@ -97,47 +99,6 @@ public class Movement : MonoBehaviour
             {
                 kill();
             }
-            // Check if E key is pressed
-            // if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
-            // {
-            //     Debug.Log("E key pressed"); // Debug message for key press
-
-            //     // Check for dead bodies in a certain radius
-            //     Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 5f); // Adjust the radius as needed
-            //     bool deadBodyDetected = false;
-
-            //     if(!isHoldingBody)
-            //     {
-            //         foreach (var hit in hits)
-            //         {
-            //             // Check if we hit a dead body
-            //             if (hit.CompareTag("dead"))
-            //             {
-            //                 Debug.Log("Dead body detected!"); // Debug message for detection
-            //                 PickUpBody(hit.gameObject);
-            //                 deadBodyDetected = true;
-    
-            //                 break;
-            //             }
-            //         }
-            //     }
-
-            //     if (!deadBodyDetected)
-            //     {
-            //         Debug.Log("No dead body detected"); // Debug message if nothing is detected
-
-            //     }
-
-            // }
-            // if (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1))
-            // {
-            //     Debug.Log("F key pressed");
-            //     if (isHoldingBody)
-            //     {
-            //         Debug.Log("ready to throw");
-            //         ThrowBody();
-            //     }
-            // }
 
         }
        

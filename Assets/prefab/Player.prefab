@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5310723460004307697}
   - component: {fileID: 4960059767421739205}
   - component: {fileID: 7446404095894123363}
-  - component: {fileID: 7247659328097695901}
   - component: {fileID: 630940349901878775}
   - component: {fileID: 347951677988304866}
+  - component: {fileID: 8778591419041271738}
   m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
@@ -161,21 +161,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7247659328097695901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80679999174338019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b785a2a3dd7971048a7b0c0bc4c873a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetRotation: 0
-  rb: {fileID: 0}
-  force: 100
 --- !u!114 &630940349901878775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +186,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8150117074501354410}
+--- !u!114 &8778591419041271738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80679999174338019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d358ea97e7a4674d8fa8dda16d2cb4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRotation: 0
+  rb: {fileID: 4960059767421739205}
+  force: 500
 --- !u!1 &237657170076505945
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4233269533248266754}
-  cam: {fileID: 2095048906032315193, guid: 9c3f943305bdf744db8f57e2ee9ebb78, type: 3}
+  cam: {fileID: 2095048906032315193, guid: 7e3477b3ca2f97c41859045ee860d3a7, type: 3}
   mousebutton: 324
 --- !u!1 &898214526234571219
 GameObject:
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 9176531458796499486}
-  cam: {fileID: 2095048906032315193, guid: 9c3f943305bdf744db8f57e2ee9ebb78, type: 3}
+  cam: {fileID: 2095048906032315193, guid: 7e3477b3ca2f97c41859045ee860d3a7, type: 3}
   mousebutton: 323
 --- !u!1 &1476297563388801075
 GameObject:
@@ -869,7 +869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRotation: 0
-  rb: {fileID: 0}
+  rb: {fileID: 5842853655454282950}
   force: 500
 --- !u!114 &5256640403443842553
 MonoBehaviour:
@@ -1338,7 +1338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5458586034255933060}
-  cam: {fileID: 2095048906032315193, guid: 9c3f943305bdf744db8f57e2ee9ebb78, type: 3}
+  cam: {fileID: 2095048906032315193, guid: 7e3477b3ca2f97c41859045ee860d3a7, type: 3}
   mousebutton: 324
 --- !u!1 &5447506637625364819
 GameObject:
@@ -1540,7 +1540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRotation: 0
-  rb: {fileID: 0}
+  rb: {fileID: 8993974704291464100}
   force: 300
 --- !u!114 &1680921007148856696
 MonoBehaviour:
@@ -1767,7 +1767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRotation: 0
-  rb: {fileID: 0}
+  rb: {fileID: 995717569077144739}
   force: 500
 --- !u!114 &5760231352371740560
 MonoBehaviour:
@@ -1994,7 +1994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRotation: 0
-  rb: {fileID: 0}
+  rb: {fileID: 5019640435794524892}
   force: 300
 --- !u!114 &5202650513617114829
 MonoBehaviour:
@@ -7175,7 +7175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4585487434917401685}
-  cam: {fileID: 2095048906032315193, guid: 9c3f943305bdf744db8f57e2ee9ebb78, type: 3}
+  cam: {fileID: 2095048906032315193, guid: 7e3477b3ca2f97c41859045ee860d3a7, type: 3}
   mousebutton: 323
 --- !u!1 &8150117074501354410
 GameObject:

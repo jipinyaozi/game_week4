@@ -8,6 +8,9 @@ public class grab : MonoBehaviour
     public KeyCode mousebutton;
     void Update()
     {
+    if (this.tag != "dead")
+        {
+
         if(Input.GetKey(mousebutton))
         {
             hold = true;
@@ -16,6 +19,7 @@ public class grab : MonoBehaviour
         {
             hold = false;
             Destroy(GetComponent<FixedJoint2D>());
+        }
         }
     }
     private void OnCollisionEnter2D(Collision2D col)
