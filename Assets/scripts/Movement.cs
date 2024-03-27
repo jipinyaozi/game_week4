@@ -174,7 +174,7 @@ public class Movement : MonoBehaviour
 
     public void kill()
     {
-        if(this.tag != "dead")
+        if (this.tag != "dead")
         {
             this.tag = "dead";
             if (heldBody)
@@ -186,19 +186,47 @@ public class Movement : MonoBehaviour
             ps.Play();
 
             IC.enabled = false;
-            // StartCoroutine(wait());
-            // Instantiate(newplayer, SpawnPoint.position, Quaternion.identity);
             deathCount++;
             deathCounter.PlayerDied();
-            // StartCoroutine(wait());
-            // changetag();
-            clone = Instantiate(newplayer, SpawnPoint.position, Quaternion.identity);
+
+            // Find the active checkpoint, if any
+            Checkpoint activeCheckpoint = FindActiveCheckpoint();
+
+            // Instantiate the clone at the active checkpoint or spawn point
+            clone = InstantiateAtPosition(activeCheckpoint);
+
             changelayer();
 
             StartCoroutine(wait());
+        }
+    }
 
-            // Instantiate(newplayer, SpawnPoint.position, Quaternion.identity);
-            
+    // Utility method to find the active checkpoint
+    private Checkpoint FindActiveCheckpoint()
+    {
+        Checkpoint[] checkpoints = FindObjectsOfType<Checkpoint>();
+        foreach (Checkpoint checkpoint in checkpoints)
+        {
+            if (checkpoint.isActive)
+            {
+                return checkpoint;
+            }
+        }
+        return null; // No active checkpoint found
+    }
+
+    // Utility method to instantiate the clone at the correct position
+    private GameObject InstantiateAtPosition(Checkpoint activeCheckpoint)
+    {
+        if (activeCheckpoint != null)
+        {
+            Debug.Log("Clone spawned at checkpoint");
+            return Instantiate(newplayer, activeCheckpoint.transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Debug.Log("Clone spawned at spawn point");
+            return Instantiate(newplayer, SpawnPoint.position, Quaternion.identity);
         }
     }
 
