@@ -25,7 +25,7 @@ public class Movement : MonoBehaviour
     private GameObject heldBody = null;
     private bool isHoldingBody = false;
     private SpriteRenderer playerSpriteRenderer;
-    Balance bodybalance;
+    public bodybalance bodybalance;
 
     public GameObject dead;
     private SpriteRenderer deadRenderer;
@@ -57,7 +57,6 @@ public class Movement : MonoBehaviour
         deadRenderer = dead.GetComponent<SpriteRenderer>();
         deadColor = deadRenderer.color;
         deathCounter = GameObject.Find("DeathCounter").GetComponent<DeathCounter>();
-        bodybalance = body.GetComponent<Balance>();
     }
 
     // Update is called once per frame
@@ -100,8 +99,11 @@ public class Movement : MonoBehaviour
                 kill();
             }
 
+        } 
+        
+        if(body.tag == "dead"){
+            bodybalance.force = 0;
         }
-       
     }
 
     public void changetag()
