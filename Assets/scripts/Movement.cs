@@ -98,6 +98,14 @@ public class Movement : MonoBehaviour
             {
                 kill();
             }
+            //Crouch
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                rightLegRB.AddForce(Vector2.down * 15);
+                rightLegRB.AddForce(Vector2.right * 5);
+                leftLegRB.AddForce(Vector2.down * 15);
+                leftLegRB.AddForce(Vector2.left * 5);
+            }
 
         } 
         
@@ -214,31 +222,36 @@ public class Movement : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         leftLegRB.AddForce(Vector2.left * (speed * 1000) * Time.deltaTime);
     }
+
     void PickUpBody(GameObject deadBody)
     {
-        IgnoreCollision ignorecol;
-        heldBody = deadBody;
-        isHoldingBody = true;
-        heldBody.transform.SetParent(this.transform);
-        ignorecol = heldBody.transform.parent.GetComponent<IgnoreCollision>();
-        ignorecol.enabled = true;
-
-        // Determine if the body is on the player's left or right by comparing their positions
-        float xOffset = Mathf.Abs(1.5f); // Absolute value for the horizontal offset
-        float yOffset = -1.5f; // Vertical offset, adjust as needed
-        if (heldBody.transform.position.x < transform.position.x)
+        float pickupDistance = 1.5f; // Adjust as needed
+        if (Vector2.Distance(transform.position, deadBody.transform.position) <= pickupDistance)
         {
-            // Body is to the player's left
-            xOffset = -xOffset;
-        }
+            IgnoreCollision ignorecol;
+            heldBody = deadBody;
+            isHoldingBody = true;
+            heldBody.transform.SetParent(this.transform);
+            ignorecol = heldBody.transform.parent.GetComponent<IgnoreCollision>();
+            ignorecol.enabled = true;
 
-        heldBody.transform.localPosition = new Vector2(xOffset, yOffset);
+            // Determine if the body is on the player's left or right by comparing their positions
+            float xOffset = Mathf.Abs(1.5f); // Absolute value for the horizontal offset
+            float yOffset = -1.5f; // Vertical offset, adjust as needed
+            if (heldBody.transform.position.x < transform.position.x)
+            {
+                // Body is to the player's left
+                xOffset = -xOffset;
+            }
 
-        Rigidbody2D rb = heldBody.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.isKinematic = true;
-            rb.velocity = Vector2.zero;
+            heldBody.transform.localPosition = new Vector2(xOffset, yOffset);
+
+            Rigidbody2D rb = heldBody.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.isKinematic = true;
+                rb.velocity = Vector2.zero;
+            }
         }
     }
 

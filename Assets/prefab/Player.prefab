@@ -31,8 +31,8 @@ Transform:
   m_GameObject: {fileID: 80679999174338019}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.13977528, y: 1.5681202, z: 0.84470004}
+  m_LocalPosition: {x: 0, y: -0.1727, z: 0}
+  m_LocalScale: {x: 0.13977528, y: 1.2228202, z: 0.84470004}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7471930710612472107}
@@ -7273,6 +7273,7 @@ MonoBehaviour:
   newplayer: {fileID: 8150117074501354410}
   SpawnPoint: {fileID: 1457372596797946002, guid: 35f4ef6bd965b18458c172e8184a3b69, type: 3}
   IC: {fileID: 7669966350885628000}
+  bodybalance: {fileID: 0}
   dead: {fileID: 8150117074501354410, guid: 8423a921b56dfd44785f15d83cf03354, type: 3}
   audio: {fileID: -784305380239154125}
   isDead: 0
