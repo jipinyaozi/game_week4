@@ -30,6 +30,7 @@ public class leveleditormanager : MonoBehaviour
     public List< tobexport > exportitems = new List<tobexport>();
     public TMP_Text warning;
     public InputField Level;
+    public AudioSource placeDownSound;
     private void Start()
     {
         Level.gameObject.SetActive(false);
@@ -69,6 +70,7 @@ public class leveleditormanager : MonoBehaviour
                     Instantiate(spawnholder, new Vector3(worldPosition.x, worldPosition.y, 0), Quaternion.identity);
                 }
             }
+            placeDownSound.Play();
             GameObject newObject = Instantiate(Itemprefabs[CurrentbuttonPressed], new Vector3(worldPosition.x, worldPosition.y, 0), Quaternion.identity);
             exportitems.Add(new tobexport { ID = CurrentbuttonPressed, pos = new Vector3(worldPosition.x, worldPosition.y, 0) });
 
