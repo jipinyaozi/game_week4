@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     public GameObject rightlowerleg;
     public GameObject head;
     public GameObject body;
-    public GameObject rightuperarm;
+    public GameObject rightupperarm;
     public GameObject rightlowerarm;
     public GameObject leftupperarm;
     public GameObject leftlowerarm;
@@ -25,8 +25,8 @@ public class Movement : MonoBehaviour
     private GameObject heldBody = null;
     private bool isHoldingBody = false;
     private SpriteRenderer playerSpriteRenderer;
-    public bodybalance bodybalance;
 
+    public bodybalance bodybalance;
     public GameObject dead;
     private SpriteRenderer deadRenderer;
     private Color deadColor;
@@ -35,6 +35,8 @@ public class Movement : MonoBehaviour
     GameObject clone;
     private int deathCount = 0;
     private DeathCounter deathCounter;
+    private bool isHovering = false;
+    public DeadBodyDelete delete;
 
     private int level1Deaths = 0;
     private int level2Deaths = 0;
@@ -57,6 +59,7 @@ public class Movement : MonoBehaviour
         deadRenderer = dead.GetComponent<SpriteRenderer>();
         deadColor = deadRenderer.color;
         deathCounter = GameObject.Find("DeathCounter").GetComponent<DeathCounter>();
+        delete.enabled = false;
     }
 
     // Update is called once per frame
@@ -106,7 +109,6 @@ public class Movement : MonoBehaviour
                 leftLegRB.AddForce(Vector2.down * 15);
                 leftLegRB.AddForce(Vector2.left * 5);
             }
-
         } 
         
         if(body.tag == "dead"){
@@ -126,8 +128,9 @@ public class Movement : MonoBehaviour
         leftlowerarm.tag = "dead";
         leftupperarm.tag = "dead";
         rightlowerarm.tag = "dead";
-        rightuperarm.tag = "dead";
+        rightupperarm.tag = "dead";
     }
+
     public void changelayer()
     {
         leftLeg.layer = LayerMask.NameToLayer("Default");
@@ -139,8 +142,7 @@ public class Movement : MonoBehaviour
         leftlowerarm.layer = LayerMask.NameToLayer("Default");
         leftupperarm.layer = LayerMask.NameToLayer("Default");
         rightlowerarm.layer = LayerMask.NameToLayer("Default");
-        rightuperarm.layer = LayerMask.NameToLayer("Default");
-
+        rightupperarm.layer = LayerMask.NameToLayer("Default");
     }
 
     public void kill()
@@ -148,6 +150,7 @@ public class Movement : MonoBehaviour
         if (this.tag != "dead")
         {
             this.tag = "dead";
+            delete.enabled = true;
             if (heldBody)
             {
                 ThrowBody();

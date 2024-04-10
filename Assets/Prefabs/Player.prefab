@@ -7193,6 +7193,8 @@ GameObject:
   - component: {fileID: 1047498373160934427}
   - component: {fileID: 7040794676191768015}
   - component: {fileID: -784305380239154125}
+  - component: {fileID: 8381857136849766728}
+  - component: {fileID: 2576464688641702522}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -7265,7 +7267,7 @@ MonoBehaviour:
   rightlowerleg: {fileID: 6001280861067989653}
   head: {fileID: 2439931879639260127}
   body: {fileID: 80679999174338019}
-  rightuperarm: {fileID: 898214526234571219}
+  rightupperarm: {fileID: 898214526234571219}
   rightlowerarm: {fileID: 8074782582204978814}
   leftupperarm: {fileID: 2833377599289323611}
   leftlowerarm: {fileID: 237657170076505945}
@@ -7273,10 +7275,11 @@ MonoBehaviour:
   newplayer: {fileID: 8150117074501354410}
   SpawnPoint: {fileID: 1457372596797946002, guid: 35f4ef6bd965b18458c172e8184a3b69, type: 3}
   IC: {fileID: 7669966350885628000}
-  bodybalance: {fileID: 0}
+  bodybalance: {fileID: 8778591419041271738}
   dead: {fileID: 8150117074501354410, guid: 8423a921b56dfd44785f15d83cf03354, type: 3}
   audio: {fileID: -784305380239154125}
   isDead: 0
+  delete: {fileID: 8381857136849766728}
   speed: 1
   jumpHeight: 1.5
   legWait: 0.5
@@ -7494,3 +7497,71 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8381857136849766728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8150117074501354410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90c39fa41b4b7047ada7c14acb697e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftLeg: {fileID: 5447506637625364819}
+  rightLeg: {fileID: 6330251773633078502}
+  leftlowerleg: {fileID: 1476297563388801075}
+  rightlowerleg: {fileID: 6001280861067989653}
+  head: {fileID: 2439931879639260127}
+  body: {fileID: 80679999174338019}
+  rightupperarm: {fileID: 898214526234571219}
+  rightlowerarm: {fileID: 8074782582204978814}
+  leftupperarm: {fileID: 2833377599289323611}
+  leftlowerarm: {fileID: 237657170076505945}
+  anim: {fileID: 1842911246232364040}
+--- !u!61 &2576464688641702522
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8150117074501354410}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.009184122, y: -0.15612918}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0562685, y: 1.4787358}
+  m_EdgeRadius: 0
