@@ -11,6 +11,8 @@ TagManager:
   - jumppad
   - ball
   - Checkpoint
+  - leveleditormanager
+  - itemcontroller
   layers:
   - Default
   - TransparentFX
