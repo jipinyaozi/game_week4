@@ -28,7 +28,12 @@ public class leveleditormanager : MonoBehaviour
     // public List<Vector3> positions = new List<Vector3>();
     public List< tobexport > exportitems = new List<tobexport>();
     public TMP_Text warning;
+    public TMP_InputField Level;
+    private void Start()
+    {
+        Level.gameObject.SetActive(false);
 
+    }
     private void Update()
     {
         Vector2 screenPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -73,6 +78,8 @@ public class leveleditormanager : MonoBehaviour
         StartCoroutine(warningtext());
         string listString = ConvertListToString(exportitems);
         GUIUtility.systemCopyBuffer = listString;
+        Level.gameObject.SetActive(true);
+        Level.text = listString;
     }
 
     private string ConvertListToString(List<tobexport> items)
@@ -80,7 +87,8 @@ public class leveleditormanager : MonoBehaviour
         StringBuilder sb = new StringBuilder();
         foreach (var item in items)
         {
-            sb.AppendLine(item.ToString());
+            sb.Append(item.ToString());
+            sb.Append(";");
         }
         return sb.ToString();
     }

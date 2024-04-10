@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
 using System.Globalization;
+using TMPro;
 
 public class loader : MonoBehaviour
 {
@@ -13,17 +14,19 @@ public class loader : MonoBehaviour
         public int ID;
         public GameObject Prefab;
     }
-    public InputField inputField;
+    public TMP_InputField inputField;
     public List<IDPrefabPair> prefabPairs; // Assign in the inspector
     public Button load;
     public GameObject player;
     private Dictionary<int, GameObject> prefabDictionary;
     public Movement control;
+    public Vector3 spawnpos;
 
     void Start()
     {
         InitializePrefabDictionary();
         control = player.GetComponent<Movement>();
+        player.gameObject.SetActive(false);
     }
 
     private void InitializePrefabDictionary()
@@ -38,59 +41,61 @@ public class loader : MonoBehaviour
     public void InstantiateObjectsFromInput() // Ensure this is public to access it from the inspector
     {
         string inputText = inputField.text;
-        var lines = inputText.Split('\n');
 
-    foreach (var line in lines)
+    var objectDataStrings = inputText.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+    foreach (var dataString in objectDataStrings)
     {
-        if (string.IsNullOrWhiteSpace(line))
+        if (string.IsNullOrWhiteSpace(dataString))
             continue;
 
         try
         {
-            var idPart = line.Split(new[] { "ID: " }, StringSplitOptions.None)[1];
-            var idString = idPart.Split(',')[0];
-            int id = int.Parse(idString.Trim());
+            // Extract ID and position from the data string
+            var idString = dataString.Split(new[] { "ID: ", ", Position: " }, StringSplitOptions.RemoveEmptyEntries)[0];
+            var positionString = dataString.Split(new[] { "ID: ", ", Position: " }, StringSplitOptions.RemoveEmptyEntries)[1];
+            positionString = positionString.Trim(new char[] { '(', ')' });
 
-
-            var positionPart = line.Split(new[] { "Position: " }, StringSplitOptions.None)[1];
-            var positionString = positionPart.Trim(new[] { '(', ')' });
+            // Parse the ID and position
+            int id = int.Parse(idString);
             var coords = positionString.Split(',');
+            float x = float.Parse(coords[0].Trim(), CultureInfo.InvariantCulture);
+            float y = float.Parse(coords[1].Trim(), CultureInfo.InvariantCulture);
+            float z = float.Parse(coords[2].Trim(), CultureInfo.InvariantCulture);
 
-            if (coords.Length == 3)
+            // Use the ID to find the corresponding prefab and instantiate it at the given position
+            Vector3 position = new Vector3(x, y, z);
+                        if(id == 2)
             {
-                float x = float.Parse(coords[0].Trim(), CultureInfo.InvariantCulture);
-                float y = float.Parse(coords[1].Trim(), CultureInfo.InvariantCulture);
-                float z = 0;
-
-                Vector3 position = new Vector3(x, y, z);
-                if(id == 2)
-                {
-                    control.SpawnPoint.position = position;
-                }
-
-                if (prefabDictionary.TryGetValue(id, out GameObject prefab))
-                {
-                    Instantiate(prefab, position, Quaternion.identity);
-                }
-                else
-                {
-                    Debug.LogWarning($"No prefab assigned for ID {id}");
-                }
+                control.SpawnPoint.position = position;
+                spawnpos = position;
+            }
+            if (prefabDictionary.TryGetValue(id, out GameObject prefab))
+            {
+                Instantiate(prefab, position, Quaternion.identity);
+            }
+            else
+            {
+                Debug.LogWarning($"No prefab assigned for ID {id}");
             }
         }
         catch (FormatException fe)
         {
-            Debug.LogError($"FormatException occurred. Line: '{line}' Error: {fe.Message}");
+            Debug.LogError($"FormatException occurred. Data String: '{dataString}' Error: {fe.Message}");
         }
         catch (Exception ex)
         {
-            Debug.LogError($"An error occurred while processing line: '{line}'. Error: {ex.Message}");
+            Debug.LogError($"An error occurred while processing data string: '{dataString}'. Error: {ex.Message}");
         }
     }
+    
     // Destroy(inputField);
     // Destroy(load);
     load.gameObject.SetActive(false);
     inputField.gameObject.SetActive(false);
-    control.kill();
+    player.transform.position = spawnpos;
+    player.gameObject.SetActive(true);
+    
+
     }
 }
