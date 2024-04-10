@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
 using TMPro;
+using UnityEngine.UI;
 
 public class leveleditormanager : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class leveleditormanager : MonoBehaviour
     // public List<Vector3> positions = new List<Vector3>();
     public List< tobexport > exportitems = new List<tobexport>();
     public TMP_Text warning;
-    public TMP_InputField Level;
+    public InputField Level;
     private void Start()
     {
         Level.gameObject.SetActive(false);
