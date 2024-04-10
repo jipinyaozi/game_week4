@@ -1,13 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text;
+using TMPro;
 
 public class leveleditormanager : MonoBehaviour
 {
+    public class tobexport
+{
+    public int ID;
+    public Vector3 pos;
+
+    public override string ToString()
+    {
+        return $"ID: {ID}, Position: {pos}";
+    }
+}
     // Start is called before the first frame update
     public itemcontroller[] Itembuttons;
     public GameObject[] Itemprefabs;
+    public GameObject[] Itemimages;
     public int CurrentbuttonPressed;
+    private bool GoalCreated = false;
+    private bool SpawnCreated = false;
+    public GameObject spawnholder;
+    // public List< int > exportitems = new List<int>();
+    // public List<Vector3> positions = new List<Vector3>();
+    public List< tobexport > exportitems = new List<tobexport>();
+    public TMP_Text warning;
 
     private void Update()
     {
@@ -17,7 +37,68 @@ public class leveleditormanager : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && Itembuttons[CurrentbuttonPressed].Clicked)
         {
             Itembuttons[CurrentbuttonPressed].Clicked = false;
+            if(CurrentbuttonPressed == 4)
+            {
+                if (GoalCreated)
+                {
+                    Destroy(GameObject.FindGameObjectWithTag("goal"));
+                }
+                else
+                {
+                    GoalCreated = true;
+                }
+
+            }
+            if(CurrentbuttonPressed == 2)
+            {
+                if (SpawnCreated)
+                {
+                    Destroy(GameObject.FindGameObjectWithTag("spwan"));
+                    Destroy(GameObject.FindGameObjectWithTag("spwan_image"));
+                    Instantiate(spawnholder, new Vector3(worldPosition.x, worldPosition.y, 0), Quaternion.identity);
+                }
+                else
+                {
+                    SpawnCreated = true;
+                    Instantiate(spawnholder, new Vector3(worldPosition.x, worldPosition.y, 0), Quaternion.identity);
+                }
+            }
             Instantiate(Itemprefabs[CurrentbuttonPressed], new Vector3(worldPosition.x, worldPosition.y, 0), Quaternion.identity);
+            exportitems.Add(new tobexport{ID = CurrentbuttonPressed, pos = new Vector3(worldPosition.x, worldPosition.y, 0)});
+            Destroy(GameObject.FindGameObjectWithTag("ItemImage"));
         }
     }
+    public void CopyListToClipboard()
+    {
+        StartCoroutine(warningtext());
+        string listString = ConvertListToString(exportitems);
+        GUIUtility.systemCopyBuffer = listString;
+    }
+
+    private string ConvertListToString(List<tobexport> items)
+    {
+        StringBuilder sb = new StringBuilder();
+        foreach (var item in items)
+        {
+            sb.AppendLine(item.ToString());
+        }
+        return sb.ToString();
+    }
+    public IEnumerator warningtext()
+    {
+        if (!SpawnCreated)
+        {
+            warning.text = ("You don't have a spawn point!");
+            yield return new WaitForSeconds(2f);
+            warning.text = "";
+        }
+        if(!GoalCreated)
+        {
+            warning.text = ("You don't have a end point!");
+            yield return new WaitForSeconds(2f);
+            warning.text = "";
+
+        }
+    }
+
 }

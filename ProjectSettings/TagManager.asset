@@ -13,6 +13,10 @@ TagManager:
   - Checkpoint
   - leveleditormanager
   - itemcontroller
+  - ItemImage
+  - spwan
+  - goal
+  - spwan_image
   layers:
   - Default
   - TransparentFX

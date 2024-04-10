@@ -15,7 +15,11 @@ public class itemcontroller : MonoBehaviour
         
     }
     public void ButtonClicked()
-    {
+    {        
+        Vector2 screenPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(screenPos);
+        Instantiate(editor.Itemimages[ID], new Vector3(worldPosition.x, worldPosition.y, 0), Quaternion.identity);
+
         Clicked = true;
         editor.CurrentbuttonPressed = ID;
     }

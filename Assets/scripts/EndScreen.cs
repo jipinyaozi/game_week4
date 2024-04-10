@@ -10,12 +10,12 @@ public class EndScreen : MonoBehaviour
         // Retry level 1 if 1 is pressed
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SceneManager.LoadScene("Tutorial");
+            SceneManager.LoadScene("Main Menu");
         }
         // Retry level 2 if 2 is pressed
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SceneManager.LoadScene("Main Level");
+            SceneManager.LoadScene("load level");
         }
     }
 }
