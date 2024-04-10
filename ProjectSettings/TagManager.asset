@@ -17,6 +17,7 @@ TagManager:
   - spwan
   - goal
   - spwan_image
+  - PlacedItem
   layers:
   - Default
   - TransparentFX

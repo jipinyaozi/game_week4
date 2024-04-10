@@ -30,6 +30,10 @@ public class leveleditormanager : MonoBehaviour
     public List< tobexport > exportitems = new List<tobexport>();
     public TMP_Text warning;
     public InputField Level;
+
+    private Material originalMaterial; // Store the original material of the hovered item
+    private bool isHovering = false;
+
     private void Start()
     {
         Level.gameObject.SetActive(false);
@@ -55,7 +59,7 @@ public class leveleditormanager : MonoBehaviour
                 }
 
             }
-            if(CurrentbuttonPressed == 2)
+            else if(CurrentbuttonPressed == 2)
             {
                 if (SpawnCreated)
                 {
@@ -69,11 +73,68 @@ public class leveleditormanager : MonoBehaviour
                     Instantiate(spawnholder, new Vector3(worldPosition.x, worldPosition.y, 0), Quaternion.identity);
                 }
             }
-            Instantiate(Itemprefabs[CurrentbuttonPressed], new Vector3(worldPosition.x, worldPosition.y, 0), Quaternion.identity);
-            exportitems.Add(new tobexport{ID = CurrentbuttonPressed, pos = new Vector3(worldPosition.x, worldPosition.y, 0)});
+            else
+            {
+                GameObject newObject = Instantiate(Itemprefabs[CurrentbuttonPressed], new Vector3(worldPosition.x, worldPosition.y, 0), Quaternion.identity);
+                exportitems.Add(new tobexport { ID = CurrentbuttonPressed, pos = new Vector3(worldPosition.x, worldPosition.y, 0) });
+
+                // Add a tag to the newly instantiated object
+                newObject.tag = "PlacedItem";
+
+                // Add collider to the newly instantiated object
+                Collider2D collider = newObject.AddComponent<BoxCollider2D>();
+                collider.isTrigger = true;
+
+                // Store the original material
+                Renderer renderer = newObject.GetComponent<Renderer>();
+                if (renderer != null)
+                {
+                    originalMaterial = renderer.material;
+                }
+            }
+
             Destroy(GameObject.FindGameObjectWithTag("ItemImage"));
         }
+
+        // Check for right-click to delete objects
+        if (Input.GetMouseButtonDown(1))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
+            if (hit.collider != null && hit.collider.CompareTag("PlacedItem"))
+            {
+                Destroy(hit.collider.gameObject);
+                // Remove the deleted item from the export list
+                exportitems.RemoveAll(item => item.pos == hit.collider.gameObject.transform.position);
+            }
+        }
+
+        // Check for mouse hover over the instantiated objects
+        RaycastHit2D[] hits = Physics2D.RaycastAll(worldPosition, Vector2.zero);
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.collider != null && hit.collider.CompareTag("PlacedItem"))
+            {
+                isHovering = true;
+                return; // Exit loop early if hovering over any object
+            }
+        }
+
+        isHovering = false; // Reset if not hovering over any object
+
+        // Hover effect
+        if (isHovering && originalMaterial != null)
+        {
+            // Lower the transparency of the hovered item
+            originalMaterial.color = new Color(originalMaterial.color.r, originalMaterial.color.g, originalMaterial.color.b, 0.5f);
+        } else {
+            // Reset the transparency to its original value
+            if (originalMaterial != null)
+            {
+                originalMaterial.color = new Color(originalMaterial.color.r, originalMaterial.color.g, originalMaterial.color.b, 1f);
+            }
+        }
     }
+    
     public void CopyListToClipboard()
     {
         StartCoroutine(warningtext());
@@ -109,5 +170,4 @@ public class leveleditormanager : MonoBehaviour
 
         }
     }
-
 }
