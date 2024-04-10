@@ -22,7 +22,7 @@ public class bodybalance : MonoBehaviour
         rb.MoveRotation(Mathf.LerpAngle(rb.rotation, targetRotation, force * Time.deltaTime));
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
-                force = 300;
+                force = 200;
             }
             if (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1))
             {
