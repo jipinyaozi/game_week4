@@ -2115,7 +2115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8, y: 13}
+  m_AnchoredPosition: {x: -0.3, y: 2.2}
   m_SizeDelta: {x: 154.65, y: 120.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &813644238
@@ -2387,8 +2387,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -189.00003, y: 115.21439}
-  m_SizeDelta: {x: -557.16, y: -295.6854}
+  m_AnchoredPosition: {x: -199.06998, y: 122.41705}
+  m_SizeDelta: {x: -577.29, y: -310.0907}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1141039597
 MonoBehaviour:
@@ -3023,7 +3023,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.000001, y: 12}
+  m_AnchoredPosition: {x: -0.3000096, y: 1.200034}
   m_SizeDelta: {x: 154.65, y: 120.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1753476919
@@ -3047,8 +3047,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\u2022 WASD : Move Camera\n\u2022 Click object then click on Canvas to
-    place down\n\u2022 'EXPORT' final design \nand copy text pop-up\n\u2022 'PLAY'
-    and paste copied text"
+    place down\n\u2022 'EXPORT' and COPY text\n\u2022 'PLAY' and PASTE text"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3111,7 +3110,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -15.494431, y: 29.697567, z: -37.444946, w: -19.368034}
+  m_margin: {x: -15.494431, y: 29.697567, z: -37.444946, w: -1.9087029}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
