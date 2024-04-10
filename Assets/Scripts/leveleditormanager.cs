@@ -60,8 +60,8 @@ public class leveleditormanager : MonoBehaviour
             {
                 if (SpawnCreated)
                 {
-                    Destroy(GameObject.FindGameObjectWithTag("spwan"));
-                    Destroy(GameObject.FindGameObjectWithTag("spwan_image"));
+                    Destroy(GameObject.FindGameObjectWithTag("spawn"));
+                    Destroy(GameObject.FindGameObjectWithTag("spawn_image"));
                     Instantiate(spawnholder, new Vector3(worldPosition.x, worldPosition.y, 0), Quaternion.identity);
                 }
                 else
