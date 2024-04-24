@@ -22,4 +22,8 @@ public class levelselect : MonoBehaviour
     {
         SceneManager.LoadScene("Level 4");
     } 
+    public void Lvl5()
+    {
+        SceneManager.LoadScene("Level 5");
+    } 
 }

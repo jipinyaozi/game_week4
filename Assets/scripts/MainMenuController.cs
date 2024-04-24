@@ -9,6 +9,6 @@ public class MainMenuController : MonoBehaviour
     public void StartGame()
     {
         // Load the scene with the specified name
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Level 1");
     }
 }
