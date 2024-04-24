@@ -5,16 +5,18 @@ public class TrapWall : MonoBehaviour
     private Rigidbody2D rb;
     private bool hasTipped = false;
     private bool canKill = true;
+    private SpriteRenderer sprite;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 1;
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && !hasTipped)
+        if (collision.gameObject.CompareTag("Player") && !hasTipped || collision.gameObject.CompareTag("Door") && !hasTipped)
         {
             Vector2 contactPoint = collision.contacts[0].point;
             Vector2 center = rb.worldCenterOfMass;
@@ -36,6 +38,7 @@ public class TrapWall : MonoBehaviour
     {
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         canKill = false;
+        sprite.color = new Color(1,1,1,1);
     }
 
     void OnCollisionStay2D(Collision2D collision)

@@ -15,6 +15,8 @@ public class Movement : MonoBehaviour
     public GameObject rightlowerarm;
     public GameObject leftupperarm;
     public GameObject leftlowerarm;
+    public GameObject leftFist;
+    public GameObject rightFist;
     Rigidbody2D leftLegRB;
     Rigidbody2D rightLegRB;
     public bool jumpable = false;
@@ -102,7 +104,7 @@ public class Movement : MonoBehaviour
                 kill();
             }
             //Crouch
-            if (Input.GetKey(KeyCode.LeftControl))
+            if (Input.GetKey(KeyCode.C))
             {
                 rightLegRB.AddForce(Vector2.down * 15);
                 rightLegRB.AddForce(Vector2.right * 5);
@@ -129,6 +131,8 @@ public class Movement : MonoBehaviour
         leftupperarm.tag = "dead";
         rightlowerarm.tag = "dead";
         rightupperarm.tag = "dead";
+        leftFist.tag = "dead";
+        rightFist.tag = "dead";
     }
 
     public void changelayer()
@@ -143,6 +147,21 @@ public class Movement : MonoBehaviour
         leftupperarm.layer = LayerMask.NameToLayer("Default");
         rightlowerarm.layer = LayerMask.NameToLayer("Default");
         rightupperarm.layer = LayerMask.NameToLayer("Default");
+        leftFist.layer = LayerMask.NameToLayer("Default");
+        rightFist.layer = LayerMask.NameToLayer("Default");
+    }
+    public void changemass()
+    {
+        leftLeg.GetComponent<Rigidbody2D>().mass = 0.05f;
+        leftlowerleg.GetComponent<Rigidbody2D>().mass = 0.05f;
+        rightLeg.GetComponent<Rigidbody2D>().mass = 0.05f;
+        rightlowerleg.GetComponent<Rigidbody2D>().mass = 0.05f;
+        head.GetComponent<Rigidbody2D>().mass = 0.05f;
+        body.GetComponent<Rigidbody2D>().mass = 0.05f;
+        leftlowerarm.GetComponent<Rigidbody2D>().mass = 0.05f;
+        leftupperarm.GetComponent<Rigidbody2D>().mass = 0.05f;
+        rightlowerarm.GetComponent<Rigidbody2D>().mass = 0.05f;
+        rightupperarm.GetComponent<Rigidbody2D>().mass = 0.05f;
     }
 
     public void kill()
@@ -170,6 +189,7 @@ public class Movement : MonoBehaviour
             clone = InstantiateAtPosition(activeCheckpoint);
 
             changelayer();
+            changemass();
 
             StartCoroutine(wait());
         }

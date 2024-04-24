@@ -1581,9 +1581,10 @@ GameObject:
   - component: {fileID: 4712771747799366741}
   - component: {fileID: 1226913983154836594}
   - component: {fileID: 8524642019203551396}
-  m_Layer: 0
+  - component: {fileID: 3732065128420025019}
+  m_Layer: 6
   m_Name: Left_Fist
-  m_TagString: Player
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1754,7 +1755,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a98e09ad8fe93546aeada352c2817e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousebutton: 0
+  mousebutton: 324
+--- !u!114 &3732065128420025019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5469172472878439227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68704d56cc8b12f4eb50566345466fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8150117074501354410}
 --- !u!1 &6001280861067989653
 GameObject:
   m_ObjectHideFlags: 0
@@ -7138,9 +7152,10 @@ GameObject:
   - component: {fileID: 6357438134686031243}
   - component: {fileID: 8270177377163993621}
   - component: {fileID: 5955387614215115105}
-  m_Layer: 0
+  - component: {fileID: 9048305267941601690}
+  m_Layer: 6
   m_Name: Right_Fist
-  m_TagString: Player
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7311,7 +7326,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a98e09ad8fe93546aeada352c2817e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousebutton: 0
+  mousebutton: 323
+--- !u!114 &9048305267941601690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804978849883677146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68704d56cc8b12f4eb50566345466fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8150117074501354410}
 --- !u!1 &8074782582204978814
 GameObject:
   m_ObjectHideFlags: 0
@@ -7649,6 +7677,8 @@ MonoBehaviour:
   rightlowerarm: {fileID: 8074782582204978814}
   leftupperarm: {fileID: 2833377599289323611}
   leftlowerarm: {fileID: 237657170076505945}
+  leftFist: {fileID: 5469172472878439227}
+  rightFist: {fileID: 7804978849883677146}
   jumpable: 0
   newplayer: {fileID: 8150117074501354410}
   SpawnPoint: {fileID: 1457372596797946002, guid: 35f4ef6bd965b18458c172e8184a3b69, type: 3}
