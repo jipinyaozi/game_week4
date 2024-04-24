@@ -208,7 +208,7 @@ public class Movement : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         changetag();
-        clone.tag = "Player";
+        clone.tag = "Main Player";
 
     }
 

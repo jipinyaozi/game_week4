@@ -18,7 +18,11 @@ TagManager:
   - goal
   - spwan_image
   - PlacedItem
+<<<<<<< Updated upstream
   - Ground
+=======
+  - Main Player
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
