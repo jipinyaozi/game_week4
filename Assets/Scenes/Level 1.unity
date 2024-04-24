@@ -238,6 +238,10 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3009374188224176081, guid: 2d942bc311ce68e4d9be3a826bf882ed, type: 3}
+      propertyPath: nextSceneName
+      value: Level 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3905408599779763522, guid: 2d942bc311ce68e4d9be3a826bf882ed, type: 3}
       propertyPath: m_Name
       value: NextScene
