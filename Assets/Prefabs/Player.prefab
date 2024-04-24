@@ -1583,7 +1583,7 @@ GameObject:
   - component: {fileID: 8524642019203551396}
   m_Layer: 0
   m_Name: Left_Fist
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7140,7 +7140,7 @@ GameObject:
   - component: {fileID: 5955387614215115105}
   m_Layer: 0
   m_Name: Right_Fist
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
