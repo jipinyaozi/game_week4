@@ -1813,8 +1813,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289092957
-  m_fontColor: {r: 0.3647059, g: 0.3647059, b: 0.6509804, a: 1}
+    rgba: 4294901760
+  m_fontColor: {r: 0, g: 0, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3008,7 +3008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7471930710612472107, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.190004
+      value: -30.160006
       objectReference: {fileID: 0}
     - target: {fileID: 7471930710612472107, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4987,7 +4987,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1457372596797946002, guid: 35f4ef6bd965b18458c172e8184a3b69, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.28
+      value: -30.25
       objectReference: {fileID: 0}
     - target: {fileID: 1457372596797946002, guid: 35f4ef6bd965b18458c172e8184a3b69, type: 3}
       propertyPath: m_LocalPosition.y

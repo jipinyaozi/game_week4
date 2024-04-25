@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class ButtonController : MonoBehaviour
 {
-    public GameObject door; // Reference to the door GameObject
-    public Rigidbody2D ballRigidbody; // Reference to the ball's Rigidbody2D component, now optional
+    public GameObject door; 
+    private bool isPressed = false;
+    private SpriteRenderer doorRenderer; 
+    private Color originalColor; 
 
-    private bool isPressed = false; // Flag to track if the button is pressed
-    private SpriteRenderer doorRenderer; // Reference to the door's SpriteRenderer component
-    private Color originalColor; // Original color of the door sprite
-
-    public float fadeSpeed = 1f; // Speed at which the door fades out
-    public float ballForce = 10f; // Force to apply to the ball, if there is one
+    public float fadeSpeed = 1f; 
 
     void Start()
     {
-        // Get the door's SpriteRenderer component and store its original color
         doorRenderer = door.GetComponent<SpriteRenderer>();
         originalColor = doorRenderer.color;
     }
@@ -39,19 +35,7 @@ public class ButtonController : MonoBehaviour
             if (door.activeSelf) // Check if the door is active to ensure the force is only applied once
             {
                 StartCoroutine(FadeOutDoor());
-
-                // Only apply force if ballRigidbody is assigned
-                if (ballRigidbody != null)
-                {
-                    ballRigidbody.AddForce(-transform.right * ballForce, ForceMode2D.Impulse);
-                }
             }
-            door.SetActive(false);
-        }
-        else if (!isPressed)
-        {
-            doorRenderer.color = originalColor;
-            door.SetActive(true);
         }
     }
 
@@ -64,6 +48,17 @@ public class ButtonController : MonoBehaviour
             newColor.a -= fadeSpeed * Time.deltaTime;
             doorRenderer.color = newColor;
             yield return null;
+        }
+
+        door.SetActive(false); // Deactivate the door
+        yield return new WaitForSeconds(0.5f); // Wait
+
+        if (isPressed)
+        {
+            StartCoroutine(FadeOutDoor());
+        } else if (!isPressed) {
+            doorRenderer.color = originalColor; // Reset the door color
+            door.SetActive(true); // Reactivate the door
         }
     }
 }
