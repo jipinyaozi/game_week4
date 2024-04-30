@@ -16,21 +16,24 @@ public class TrapWall : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && !hasTipped || collision.gameObject.CompareTag("Door") && !hasTipped)
+        Debug.Log("Collision with: " + collision.gameObject.tag);  
+
+        if ((collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Door")) && !hasTipped)
         {
             Vector2 contactPoint = collision.contacts[0].point;
             Vector2 center = rb.worldCenterOfMass;
             float direction = contactPoint.x > center.x ? -1f : 1f;
 
-            rb.AddTorque(direction * 5f, ForceMode2D.Impulse);
+            Debug.Log("Applying torque: " + direction * 10f);  
+            rb.AddTorque(direction * 1000f, ForceMode2D.Impulse);
 
             hasTipped = true;
-
             Invoke("FreezeWall", 1.5f);
         }
         else if (collision.gameObject.CompareTag("Ground"))
         {
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            Debug.Log("Wall has hit the ground and frozen.");
         }
     }
 
@@ -38,8 +41,10 @@ public class TrapWall : MonoBehaviour
     {
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         canKill = false;
-        sprite.color = new Color(1,1,1,1);
+        sprite.color = new Color(1, 1, 1, 1);
+        Debug.Log("Wall has frozen rotation and changed color.");
     }
+
 
     void OnCollisionStay2D(Collision2D collision)
     {
