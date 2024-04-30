@@ -4,31 +4,40 @@ using UnityEngine;
 
 public class jumppad : MonoBehaviour
 {
-    [SerializeField] private float bounce = 5f;
+    [SerializeField] private float bounceForce = 100f;
     public AudioSource sound;
-    private bool PlayerJumped = false;
+    private bool canBounce = false;
 
-    private void OnCollisionEnter2D(Collision2D col) {
 
-        if (col.gameObject.CompareTag("Door"))
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && canBounce)
         {
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                PlayerJumped = true;
+            canBounce = false;  
+            Rigidbody2D playerRb = GameObject.FindGameObjectWithTag("Door").GetComponent<Rigidbody2D>();
+            if (playerRb != null)
+            {
+                playerRb.velocity = new Vector2(playerRb.velocity.x, bounceForce);
+                sound.Play();
             }
         }
-
-        if (PlayerJumped)
-        {
-            sound.Play();
-            col.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * bounce, ForceMode2D.Impulse);
-            PlayerJumped = false;
-        } 
-        
     }
-    
-    IEnumerator wait()
+
+
+
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        yield return new WaitForSeconds(1);
+        if (col.gameObject.CompareTag("Door"))
+        {
+            canBounce = true;  
+        }
     }
 
+    private void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Door"))
+        {
+            canBounce = false;  
+        }
+    }
 }

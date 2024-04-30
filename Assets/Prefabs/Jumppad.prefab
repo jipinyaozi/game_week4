@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be686e912cb8bf4a96938ff89efa26e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounce: 60
+  bounceForce: 100
   sound: {fileID: 3002193404020421073}
 --- !u!82 &3002193404020421073
 AudioSource:
