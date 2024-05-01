@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounceForce: 5
   sound: {fileID: 3002193404020421073}
+  player: {fileID: 8150117074501354410, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
 --- !u!82 &3002193404020421073
 AudioSource:
   m_ObjectHideFlags: 0

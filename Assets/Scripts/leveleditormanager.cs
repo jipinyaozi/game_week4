@@ -31,6 +31,7 @@ public class leveleditormanager : MonoBehaviour
     public TMP_Text warning;
     public InputField Level;
     public AudioSource placeDownSound;
+    public Vector3 SpawnPoint;
     private void Start()
     {
         Level.gameObject.SetActive(false);
@@ -63,11 +64,13 @@ public class leveleditormanager : MonoBehaviour
                     Destroy(GameObject.FindGameObjectWithTag("spawn"));
                     Destroy(GameObject.FindGameObjectWithTag("spawn_image"));
                     Instantiate(spawnholder, new Vector3(worldPosition.x, worldPosition.y, 0), Quaternion.identity);
+                    SpawnPoint = new Vector3(worldPosition.x, worldPosition.y, 0);
                 }
                 else
                 {
                     SpawnCreated = true;
                     Instantiate(spawnholder, new Vector3(worldPosition.x, worldPosition.y, 0), Quaternion.identity);
+                    SpawnPoint = new Vector3(worldPosition.x, worldPosition.y, 0);
                 }
             }
             placeDownSound.Play();

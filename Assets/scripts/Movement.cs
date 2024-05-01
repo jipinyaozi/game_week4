@@ -27,6 +27,7 @@ public class Movement : MonoBehaviour
     private GameObject heldBody = null;
     private bool isHoldingBody = false;
     private SpriteRenderer playerSpriteRenderer;
+    Rigidbody2D bodyRB;
 
     public bodybalance bodybalance;
     public GameObject dead;
@@ -55,6 +56,7 @@ public class Movement : MonoBehaviour
     {
         leftLegRB = leftLeg.GetComponent<Rigidbody2D>();
         rightLegRB = rightLeg.GetComponent<Rigidbody2D>();
+        bodyRB = body.GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         ps = FindObjectOfType<ParticleSystem>();
         playerSpriteRenderer = GetComponent<SpriteRenderer>();
@@ -94,8 +96,9 @@ public class Movement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     jumpable = false;
-                    leftLegRB.AddForce(Vector2.up * (jumpHeight*1000));
-                    rightLegRB.AddForce(Vector2.up * (jumpHeight * 1000));
+                    // leftLegRB.AddForce(Vector2.up * (jumpHeight*1000));
+                    // rightLegRB.AddForce(Vector2.up * (jumpHeight * 1000));
+                    bodyRB.AddForce(Vector2.up * (jumpHeight * 2500));
 
                 }
             }
@@ -117,7 +120,10 @@ public class Movement : MonoBehaviour
             bodybalance.force = 0;
         }
     }
-
+    public void padjump()
+    {
+        bodyRB.AddForce(Vector2.up * 2000);
+    }
     public void changetag()
     {
         this.tag = "dead";
