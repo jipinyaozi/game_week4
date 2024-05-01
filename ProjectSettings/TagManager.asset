@@ -15,6 +15,7 @@ TagManager:
   - Spike
   - spwan_image
   - Ground
+  - PlacedItem
   layers:
   - Default
   - TransparentFX
