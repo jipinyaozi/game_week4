@@ -10,7 +10,8 @@ public class Testplay : MonoBehaviour
         public GameObject Prefab;
     }
 
-    public Canvas canvas;
+    public GameObject canvasButtons;
+    public GameObject editButton;
     public leveleditormanager level;
     public List<IDPrefabPair> prefabPairs;
     public GameObject player;
@@ -26,18 +27,27 @@ public class Testplay : MonoBehaviour
         control = player.GetComponent<Movement>();
         player.gameObject.SetActive(false);
         testCam.gameObject.SetActive(false);
-
+        editButton.SetActive(false);
     }
 
     // Update is called once per frame
     public void playtest()
     {
-        canvas.gameObject.SetActive(false);
+        canvasButtons.gameObject.SetActive(false);
         player.transform.position = level.SpawnPoint;
         editorCam.gameObject.SetActive(false);
         player.gameObject.SetActive(true);
         testCam.gameObject.SetActive(true);
         Debug.Log(level.SpawnPoint);
+        editButton.SetActive(true);
+    }
 
+    public void ReturnToLevelEditor()
+    {
+        canvasButtons.gameObject.SetActive(true);
+        player.gameObject.SetActive(false);
+        editorCam.gameObject.SetActive(true);
+        testCam.gameObject.SetActive(false);
+        editButton.SetActive(false);
     }
 }
