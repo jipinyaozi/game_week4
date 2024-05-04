@@ -1582,6 +1582,7 @@ GameObject:
   - component: {fileID: 1226913983154836594}
   - component: {fileID: 8524642019203551396}
   - component: {fileID: 3732065128420025019}
+  - component: {fileID: 1089100903605788567}
   m_Layer: 6
   m_Name: Left_Fist
   m_TagString: Door
@@ -1769,6 +1770,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8150117074501354410}
+--- !u!114 &1089100903605788567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5469172472878439227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e2169ab5caad346ac7a47a483be41a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprd: {fileID: 2002665241075335020}
+  orange: {r: 0.9056604, g: 0.6129112, b: 0.12388753, a: 0}
+  mousebutton: 324
+  origonal: {r: 0.990566, g: 0.990566, b: 0.990566, a: 0}
 --- !u!1 &6001280861067989653
 GameObject:
   m_ObjectHideFlags: 0
@@ -7153,6 +7170,7 @@ GameObject:
   - component: {fileID: 8270177377163993621}
   - component: {fileID: 5955387614215115105}
   - component: {fileID: 9048305267941601690}
+  - component: {fileID: 1173155240160535893}
   m_Layer: 6
   m_Name: Right_Fist
   m_TagString: Door
@@ -7340,6 +7358,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8150117074501354410}
+--- !u!114 &1173155240160535893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804978849883677146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e2169ab5caad346ac7a47a483be41a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprd: {fileID: 2109259982181393540}
+  orange: {r: 0, g: 0, b: 0, a: 0}
+  mousebutton: 323
+  origonal: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8074782582204978814
 GameObject:
   m_ObjectHideFlags: 0

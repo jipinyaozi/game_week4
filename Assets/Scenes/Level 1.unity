@@ -2970,6 +2970,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5955387614215115105, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: mousebutton
+      value: 323
+      objectReference: {fileID: 0}
     - target: {fileID: 6401214613107102451, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: mousebutton
       value: 324
@@ -3092,7 +3096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8524642019203551396, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: mousebutton
-      value: 256
+      value: 324
       objectReference: {fileID: 0}
     - target: {fileID: 8714157295400555586, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: cam
