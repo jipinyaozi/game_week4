@@ -18,7 +18,7 @@ public class TrapWall : MonoBehaviour
     {
         Debug.Log("Collision with: " + collision.gameObject.tag);  
 
-        if ((collision.gameObject.CompareTag("Main Player") || collision.gameObject.CompareTag("Door")) && !hasTipped)
+        if ((collision.gameObject.CompareTag("Main Player") || collision.gameObject.CompareTag("Door") || collision.gameObject.CompareTag("Player")) && !hasTipped)
         {
             Vector2 contactPoint = collision.contacts[0].point;
             Vector2 center = rb.worldCenterOfMass;
@@ -48,7 +48,7 @@ public class TrapWall : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Main Player") && canKill)
+        if (collision.gameObject.CompareTag("Main Player") && canKill || collision.gameObject.CompareTag("Player") && canKill)
         {
             Movement movement = collision.gameObject.GetComponent<Movement>();
             if (movement != null)
