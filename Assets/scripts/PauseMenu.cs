@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -6,6 +7,22 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
 
     private bool isPaused = false;
+
+    public Button continueButton; 
+    public Button quitButton;      
+
+    void Start()
+    {
+        if (continueButton != null)
+            continueButton.onClick.AddListener(Resume);
+        else
+            Debug.LogError("Continue button is not assigned!");
+
+        if (quitButton != null)
+            quitButton.onClick.AddListener(QuitGame);
+        else
+            Debug.LogError("Quit button is not assigned!");
+    }
 
     void Awake()
     {
@@ -38,9 +55,17 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        isPaused = false;
+        Debug.Log("Resume method called"); 
+        if (pauseMenuUI != null)
+        {
+            pauseMenuUI.SetActive(false);
+            Time.timeScale = 1f;
+            isPaused = false;
+        }
+        else
+        {
+            Debug.LogError("Pause menu UI GameObject is not found.");
+        }
     }
 
     public void Pause()
@@ -60,6 +85,7 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
+        Debug.Log("Quitting game...");
+        Application.Quit();  
     }
 }
