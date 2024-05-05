@@ -17,7 +17,7 @@ public class NextScene : MonoBehaviour
     // Trigger the transition when the player enters the trigger collider
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Main Player"))
         {
             TransitionToNextScene();
         }
