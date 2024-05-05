@@ -8,7 +8,6 @@ public class bodybalance : MonoBehaviour
     public Rigidbody2D rb;
     public float force;
     private bool isActive = true; // Now the variable is private
-    int maxforce = 500;
     float forcespeed = 0.01f;
     private void Start()
     {
