@@ -1151,6 +1151,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1089100903605788567, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: mousebutton
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173155240160535893, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: mousebutton
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1226913983154836594, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: 0.045138195
@@ -1233,7 +1241,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5469172472878439227, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 5955387614215115105, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: mousebutton
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6886178575455164460, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_UseLimits
@@ -1297,7 +1309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7804978849883677146, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 7973798175090475832, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: m_AngleLimits.m_LowerAngle
@@ -1327,6 +1339,10 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 321676025}
+    - target: {fileID: 8524642019203551396, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
+      propertyPath: mousebutton
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8714157295400555586, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: cam
       value: 
@@ -5546,9 +5562,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1393001392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -505, y: 269}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1325854541

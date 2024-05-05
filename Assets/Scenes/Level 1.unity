@@ -3478,7 +3478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5955387614215115105, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: mousebutton
-      value: 323
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6401214613107102451, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: mousebutton
@@ -3602,7 +3602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8524642019203551396, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: mousebutton
-      value: 324
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8714157295400555586, guid: 40c7869c06b87c04c97cfe625900878b, type: 3}
       propertyPath: cam
@@ -5659,11 +5659,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 788794592}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -292, y: 163}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!1 &2109939773
 GameObject:
   m_ObjectHideFlags: 0

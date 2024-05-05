@@ -8,7 +8,6 @@ public class jumppad : MonoBehaviour
     public AudioSource sound;
     private bool canBounce = false;
     public GameObject playerbody;
-    bool parentfound = false;
     void Start()
     {
     }
