@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -82,10 +83,19 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void HidePauseMenu()
+    {
+        pauseMenuUI.SetActive(false);
+        isPaused = false;
+        Time.timeScale = 1f; 
+    }
+
 
     public void QuitGame()
     {
-        Debug.Log("Quitting game...");
-        Application.Quit();  
+        Debug.Log("Returning to main menu...");
+        HidePauseMenu();
+        SceneManager.LoadScene("Main Menu");  
     }
+
 }
