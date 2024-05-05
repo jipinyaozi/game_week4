@@ -421,7 +421,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237657170076505945}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a98e09ad8fe93546aeada352c2817e9, type: 3}
   m_Name: 
@@ -1783,9 +1783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprd: {fileID: 2002665241075335020}
-  orange: {r: 0.9056604, g: 0.6129112, b: 0.12388753, a: 0}
   mousebutton: 324
-  origonal: {r: 0.990566, g: 0.990566, b: 0.990566, a: 0}
 --- !u!1 &6001280861067989653
 GameObject:
   m_ObjectHideFlags: 0
@@ -7371,9 +7369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprd: {fileID: 2109259982181393540}
-  orange: {r: 0, g: 0, b: 0, a: 0}
   mousebutton: 323
-  origonal: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8074782582204978814
 GameObject:
   m_ObjectHideFlags: 0
@@ -7594,7 +7590,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8074782582204978814}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a98e09ad8fe93546aeada352c2817e9, type: 3}
   m_Name: 

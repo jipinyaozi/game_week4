@@ -107,7 +107,7 @@ public class Movement : MonoBehaviour
                 kill();
             }
             //Crouch
-            if (Input.GetKey(KeyCode.C))
+            if (Input.GetKey(KeyCode.S))
             {
                 rightLegRB.AddForce(Vector2.down * 15);
                 rightLegRB.AddForce(Vector2.right * 5);
@@ -193,6 +193,8 @@ public class Movement : MonoBehaviour
 
             // Instantiate the clone at the active checkpoint or spawn point
             clone = InstantiateAtPosition(activeCheckpoint);
+            leftFist.SetActive(false);
+            rightFist.SetActive(false);
 
             changelayer();
             changemass();
