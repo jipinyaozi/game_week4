@@ -6017,7 +6017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1901267963}
   - component: {fileID: 1901267964}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Sprite Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6540,7 +6540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875102660453275504, guid: c4fd19358a99cc3489fa268538a67e5b, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1327352045797604231, guid: c4fd19358a99cc3489fa268538a67e5b, type: 3}
       propertyPath: m_GravityScale

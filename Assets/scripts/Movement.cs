@@ -109,10 +109,10 @@ public class Movement : MonoBehaviour
             //Crouch
             if (Input.GetKey(KeyCode.S))
             {
-                rightLegRB.AddForce(Vector2.down * 15);
-                rightLegRB.AddForce(Vector2.right * 5);
-                leftLegRB.AddForce(Vector2.down * 15);
-                leftLegRB.AddForce(Vector2.left * 5);
+                rightLegRB.AddForce(Vector2.down * 55);
+                rightLegRB.AddForce(Vector2.right * 10);
+                leftLegRB.AddForce(Vector2.down * 55);
+                leftLegRB.AddForce(Vector2.left * 10);
             }
         } 
         
