@@ -40,6 +40,7 @@ public class Movement : MonoBehaviour
     private DeathCounter deathCounter;
     private bool isHovering = false;
     public DeadBodyDelete delete;
+    bool crouch = false;
 
     private int level1Deaths = 0;
     private int level2Deaths = 0;
@@ -64,6 +65,19 @@ public class Movement : MonoBehaviour
         deadColor = deadRenderer.color;
         deathCounter = GameObject.Find("DeathCounter").GetComponent<DeathCounter>();
         delete.enabled = false;
+    }
+    void FixedUpdate()
+    {
+        if(this.tag != "dead")
+        {
+            if (crouch)
+            {
+                rightLegRB.AddForce(Vector2.down * 200);
+                rightLegRB.AddForce(Vector2.right * 40);
+                leftLegRB.AddForce(Vector2.down * 200);
+                leftLegRB.AddForce(Vector2.left * 40);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -107,12 +121,13 @@ public class Movement : MonoBehaviour
                 kill();
             }
             //Crouch
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.S))
             {
-                rightLegRB.AddForce(Vector2.down * 55);
-                rightLegRB.AddForce(Vector2.right * 10);
-                leftLegRB.AddForce(Vector2.down * 55);
-                leftLegRB.AddForce(Vector2.left * 10);
+                crouch = true;
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                crouch = false;
             }
         } 
         

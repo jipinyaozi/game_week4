@@ -11,7 +11,7 @@ public class PauseMenu : MonoBehaviour
 
     public Button continueButton; 
     public Button quitButton;      
-
+    public Button restartbutton;
     void Start()
     {
         if (continueButton != null)
@@ -23,6 +23,10 @@ public class PauseMenu : MonoBehaviour
             quitButton.onClick.AddListener(QuitGame);
         else
             Debug.LogError("Quit button is not assigned!");
+        if(restartbutton != null)
+        {
+            restartbutton.onClick.AddListener(restart);
+        }
     }
 
     void Awake()
@@ -67,6 +71,12 @@ public class PauseMenu : MonoBehaviour
         {
             Debug.LogError("Pause menu UI GameObject is not found.");
         }
+    }
+    public void restart()
+    {
+        Debug.Log("restart scene");
+        HidePauseMenu();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);  
     }
 
     public void Pause()
